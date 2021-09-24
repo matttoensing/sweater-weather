@@ -4,4 +4,5 @@ class User < ApplicationRecord
   validates :password, confirmation: { case_sensitive: true }
 
   has_secure_password
+  has_secure_token :api_key, confirmation: { case_sensitive: true }
 end
