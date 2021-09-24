@@ -3,9 +3,9 @@ class Image
 
   def initialize(data)
     @id = nil
-    @image_url = data[:results][0][:urls][:full]
-    @author = data[:results][0][:user][:name]
-    @author_url = data[:results][0][:user][:portfolio_url]
+    @image_url = data[:urls][:full]
+    @author = data[:user][:name]
+    @author_url = data[:user][:portfolio_url]
     @source = 'unsplash.com'
   end
 end

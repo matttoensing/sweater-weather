@@ -9,9 +9,9 @@ require 'rails_helper'
 
      expect(image).to be_an_instance_of(Image)
      expect(image.id).to eq(nil)
-     expect(image.image_url).to eq(attributes[:results][0][:urls][:full])
-     expect(image.author).to eq(attributes[:results][0][:user][:name])
-     expect(image.author_url).to eq(attributes[:results][0][:user][:portfolio_url])
+     expect(image.image_url).to eq(attributes[:urls][:full])
+     expect(image.author).to eq(attributes[:user][:name])
+     expect(image.author_url).to eq(attributes[:user][:portfolio_url])
      expect(image.source).to eq('unsplash.com')
    end
  end
