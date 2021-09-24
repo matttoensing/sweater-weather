@@ -13,7 +13,7 @@ class CurrentWeather
     @datetime = format_time(info[:current][:dt])
     @temperature = info[:current][:temp]
     @humidity = info[:current][:humidity]
-    @feels_like = info[:current][:feelslike]
+    @feels_like = info[:current][:feels_like]
     @uvi = info[:current][:uvi]
     @visibility = info[:current][:visibility]
     @sunrise = format_time(info[:current][:sunrise])

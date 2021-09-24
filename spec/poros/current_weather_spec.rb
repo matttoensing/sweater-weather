@@ -38,7 +38,7 @@ require 'rails_helper'
       expect(current_weather.datetime).to eq(Time.at(attributes[:current][:dt]))
       expect(current_weather.temperature).to eq(attributes[:current][:temp])
       expect(current_weather.humidity).to eq(attributes[:current][:humidity])
-      expect(current_weather.feels_like).to eq(attributes[:current][:feelslike])
+      expect(current_weather.feels_like).to eq(attributes[:current][:feels_like])
       expect(current_weather.uvi).to eq(attributes[:current][:uvi])
       expect(current_weather.visibility).to eq(attributes[:current][:visibility])
       expect(current_weather.sunset).to eq(Time.at(attributes[:current][:sunset]))
