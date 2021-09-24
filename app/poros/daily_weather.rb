@@ -8,12 +8,16 @@ class DailyWeather
               :icon
 
   def initialize(info)
-    @date = info[:date]
-    @sunrise = info[:astro][:sunrise]
-    @sunset = info[:astro][:sunset]
-    @max_temp = info[:day][:maxtemp_f]
-    @min_temp = info[:day][:mintemp_f]
-    @conditions = info[:day][:condition][:text]
-    @icon = info[:day][:condition][:icon]
+    @date = info[:dt]
+    @sunrise = info[:sunrise]
+    @sunset = info[:sunset]
+    @max_temp = info[:temp][:max]
+    @min_temp = info[:temp][:min]
+    @conditions = info[:weather][0][:description]
+    @icon = format_icon(info[:weather][0][:icon])
+  end
+
+  def format_icon(icon)
+    "http://openweathermap.org/img/w/#{icon}.png"
   end
 end
