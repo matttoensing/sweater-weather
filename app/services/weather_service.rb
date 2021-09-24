@@ -8,3 +8,4 @@ class WeatherService < BaseService
     get_json(response)
   end
  end
+# http://api.openweathermap.org/data/2.5/onecall?
