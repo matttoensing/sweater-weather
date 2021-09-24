@@ -40,6 +40,22 @@ RSpec.describe 'weather api' do
       expect(weather[:attributes][:hourly_weather][0]).to have_key(:conditions)
       expect(weather[:attributes][:hourly_weather][0]).to have_key(:icon)
     end
+
+    it 'only sends the neccessary data, and does not send what is not needed', :vcr do
+      get '/api/v1/forecast', params: { location: 'denver,co'}
+
+      expect(response).to be_successful
+
+      weather = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(weather).to_not have_key(:moonrise)
+      expect(weather).to_not have_key(:moonset)
+      expect(weather).to_not have_key(:moonphase)
+      expect(weather).to_not have_key(:pressure)
+      expect(weather).to_not have_key(:wind_deg)
+      expect(weather).to_not have_key(:wind_gust)
+      expect(weather).to_not have_key(:dew_point)
+    end
   end
 
   describe 'sad paths' do
