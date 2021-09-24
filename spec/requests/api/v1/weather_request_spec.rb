@@ -59,8 +59,16 @@ RSpec.describe 'weather api' do
   end
 
   describe 'sad paths' do
-    xit '' do
+    it 'will return an error if no location is found', :vcr do
+      get '/api/v1/forecast'
 
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to have_key(:error)
+      expect(error).to have_key(:message)
     end
   end
 end
