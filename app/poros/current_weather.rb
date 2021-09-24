@@ -10,13 +10,13 @@ class CurrentWeather
 
 
   def initialize(info)
-    @datetime = info[:location][:localtime]
-    @temperature = info[:current][:temp_f]
+    @datetime = info[:current][:dt]
+    @temperature = info[:current][:temp]
     @humidity = info[:current][:humidity]
-    @feels_like = info[:current][:feelslike_f]
-    @uvi = info[:current][:uv]
-    @visibility = info[:current][:vis_miles]
-    @sunrise = info[:forecast][:forecastday][0][:astro][:sunrise]
-    @sunset = info[:forecast][:forecastday][0][:astro][:sunset]
+    @feels_like = info[:current][:feelslike]
+    @uvi = info[:current][:uvi]
+    @visibility = info[:current][:visibility]
+    @sunrise = info[:current][:sunrise]
+    @sunset = info[:current][:sunset]
   end
 end

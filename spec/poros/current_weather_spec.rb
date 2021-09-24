@@ -2,43 +2,46 @@ require 'rails_helper'
 
  RSpec.describe CurrentWeather do
    it 'exists and has attributes' do
-     attributes = {
-       location: {
-         localtime: "2021-09-23 18:49"
-       },
+     attributes =  {
+       lat: 34.2809,
+       lon: -114.1838,
+       timezone: "America/Los_Angeles",
+       timezone_offset: -25200,
        current: {
-         temp_f: 75.2,
-         humidity: 18,
-         feelslike_f: 73.7,
-         vis_miles: 9.0,
-         uv: 7.0,
-         condition: {
-           text: 'Sunny',
-           icon: "//cdn.weatherapi.com/weather/64x64/day/113.png"
-         }
-       },
-       forecast: {
-         forecastday: [
-           {
-             astro: {
-               sunrise: "06:50 AM",
-               sunset: "06:56 PM"
-             }
-           }
-         ]
-       }
-     }
+        dt: 1632493086,
+        sunrise: 1632489985,
+        sunset: 1632533450,
+        temp: 299.01,
+        feels_like: 298.88,
+        pressure: 1012,
+        humidity: 47,
+        dew_point: 286.85,
+        uvi: 0,
+        clouds: 42,
+        visibility: 10000,
+        wind_speed: 1.72,
+        wind_deg: 47,
+        wind_gust: 1.91,
+        weather: [
+            {
+                id: 802,
+                main: "Clouds",
+                description: "scattered clouds",
+                icon: "03d"
+            }
+        ]
+    }}
 
       current_weather = CurrentWeather.new(attributes)
 
       expect(current_weather).to be_an_instance_of(CurrentWeather)
-      expect(current_weather.datetime).to eq(attributes[:location][:localtime])
-      expect(current_weather.temperature).to eq(attributes[:current][:temp_f])
+      expect(current_weather.datetime).to eq(attributes[:current][:dt])
+      expect(current_weather.temperature).to eq(attributes[:current][:temp])
       expect(current_weather.humidity).to eq(attributes[:current][:humidity])
-      expect(current_weather.feels_like).to eq(attributes[:current][:feelslike_f])
-      expect(current_weather.uvi).to eq(attributes[:current][:uv])
-      expect(current_weather.visibility).to eq(attributes[:current][:vis_miles])
-      expect(current_weather.sunset).to eq(attributes[:forecast][:forecastday][0][:astro][:sunset])
-      expect(current_weather.sunrise).to eq(attributes[:forecast][:forecastday][0][:astro][:sunrise])
+      expect(current_weather.feels_like).to eq(attributes[:current][:feelslike])
+      expect(current_weather.uvi).to eq(attributes[:current][:uvi])
+      expect(current_weather.visibility).to eq(attributes[:current][:visibility])
+      expect(current_weather.sunset).to eq(attributes[:current][:sunset])
+      expect(current_weather.sunrise).to eq(attributes[:current][:sunrise])
    end
  end

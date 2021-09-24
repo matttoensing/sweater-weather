@@ -1,6 +1,6 @@
 require 'rails_helper'
 
- RSpec.describe Weather do
+ RSpec.describe Forecast do
    it 'exists and has attributes' do
      response = File.read('spec/fixtures/weather_attributes.json')
 
@@ -8,7 +8,7 @@ require 'rails_helper'
 
      weather = Weather.new(attributes)
 
-     expect(weather).to be_an_instance_of(Weather)
+     expect(weather).to be_an_instance_of(Forecast)
      expect(weather.id).to eq(nil)
 
      expect(weather.current_weather).to be_an_instance_of(CurrentWeather)
