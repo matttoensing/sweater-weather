@@ -9,8 +9,9 @@ require 'rails_helper'
      weather = Weather.new(attributes)
 
      expect(weather).to be_an_instance_of(Weather)
+     expect(weather.id).to eq(nil)
 
-       expect(weather.current_weather).to be_an_instance_of(CurrentWeather)
+     expect(weather.current_weather).to be_an_instance_of(CurrentWeather)
 
 
      weather.daily_weather.each do |daily|
