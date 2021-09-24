@@ -6,7 +6,7 @@ RSpec.describe WeatherService do
     expect(connection).to be_an_instance_of(Faraday::Connection)
   end
 
-  it 'can get weather infromation' do
+  it 'can get weather infromation', :vcr do
     json = WeatherService.get_weather_info('Boulder')
 
     expect(json).to have_key(:location)
