@@ -3,9 +3,9 @@ class WeatherService < BaseService
     response = conn('http://api.openweathermap.org/data/2.5/onecall').get do |f|
       f.params['lat'] = lat
       f.params['lon'] = lon
+      f.params['units'] = 'imperial'
       f.params['appid'] = ENV['weather_key']
     end
     get_json(response)
   end
  end
-# http://api.openweathermap.org/data/2.5/onecall?

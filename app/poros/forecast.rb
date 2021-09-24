@@ -12,13 +12,13 @@ class Forecast
   end
 
   def create_daily_weather(data)
-    data.map do |details|
+    data[1..5].map do |details|
       DailyWeather.new(details)
     end
   end
 
   def create_hourly_weather(data)
-    data.map do |details|
+    data[1..8].map do |details|
       HourlyWeather.new(details)
     end
   end
