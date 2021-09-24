@@ -1,8 +1,8 @@
 require 'rails_helper'
 
  RSpec.describe DailyWeather do
-   it 'exists and has attributes' do
-     attributes = {
+   before(:each) do
+     @attributes = {
             dt: 1632510000,
             sunrise: 1632489985,
             sunset: 1632533450,
@@ -43,15 +43,27 @@ require 'rails_helper'
         }
 
 
-     daily_weather = DailyWeather.new(attributes)
+     @daily_weather = DailyWeather.new(@attributes)
+   end
 
-     expect(daily_weather).to be_an_instance_of(DailyWeather)
-     expect(daily_weather.date).to eq(attributes[:dt])
-     expect(daily_weather.sunrise).to eq(attributes[:sunrise])
-     expect(daily_weather.sunset).to eq(attributes[:sunset])
-     expect(daily_weather.max_temp).to eq(attributes[:temp][:max])
-     expect(daily_weather.min_temp).to eq(attributes[:temp][:min])
-     expect(daily_weather.conditions).to eq(attributes[:weather][0][:description])
-     expect(daily_weather.icon).to eq("http://openweathermap.org/img/w/03d.png")
+   it 'exists and has attributes' do
+     expect(@daily_weather).to be_an_instance_of(DailyWeather)
+     expect(@daily_weather.date).to eq(Time.at(@attributes[:dt]))
+     expect(@daily_weather.sunrise).to eq(Time.at(@attributes[:sunrise]))
+     expect(@daily_weather.sunset).to eq(Time.at(@attributes[:sunset]))
+     expect(@daily_weather.max_temp).to eq(@attributes[:temp][:max])
+     expect(@daily_weather.min_temp).to eq(@attributes[:temp][:min])
+     expect(@daily_weather.conditions).to eq(@attributes[:weather][0][:description])
+     expect(@daily_weather.icon).to eq("http://openweathermap.org/img/w/03d.png")
+   end
+
+   it 'can format an icon to the correct url' do
+     expected = "http://openweathermap.org/img/w/03d.png"
+     expect(@daily_weather.format_icon('03d')).to eq(expected)
+   end
+
+   it 'can format time correctly' do
+     expected = Time.at(@attributes[:sunrise])
+     expect(@daily_weather.format_time(1632489985)).to eq(expected)
    end
  end
