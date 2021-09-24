@@ -9,12 +9,6 @@ RSpec.describe WeatherService do
   it 'can get weather infromation', :vcr do
     json = WeatherService.get_weather_info('34.28088', '-114.18384')
 
-    # expect(json).to have_key(:location)
-    # expect(json[:location].class).to eq(Hash)
-    # expect(json[:location]).to have_key(:localtime)
-    # expect(json[:location][:localtime].class).to eq(String)
-
-
     expect(json).to have_key(:current)
     expect(json[:current].class).to eq(Hash)
     expect(json[:current]).to have_key(:temp)
