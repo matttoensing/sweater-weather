@@ -6,18 +6,19 @@ require 'rails_helper'
 
      attributes = JSON.parse(response, symbolize_names: true)
 
-     weather = Weather.new(attributes)
+     weather = Forecast.new(attributes)
 
      expect(weather).to be_an_instance_of(Forecast)
      expect(weather.id).to eq(nil)
 
      expect(weather.current_weather).to be_an_instance_of(CurrentWeather)
 
-
+     expect(weather.daily_weather.count).to eq(8)
      weather.daily_weather.each do |daily|
        expect(daily).to be_an_instance_of(DailyWeather)
      end
 
+     expect(weather.hourly_weather.count).to eq(48)
      weather.hourly_weather.each do |hourly|
        expect(hourly).to be_an_instance_of(HourlyWeather)
      end

@@ -7,8 +7,8 @@ class Forecast
   def initialize(data)
     @id = nil
     @current_weather = CurrentWeather.new(data)
-    @daily_weather = create_daily_weather(data[:forecast][:forecastday])
-    @hourly_weather = create_hourly_weather(data[:forecast][:forecastday][0][:hour])
+    @daily_weather = create_daily_weather(data[:daily])
+    @hourly_weather = create_hourly_weather(data[:hourly])
   end
 
   def create_daily_weather(data)
@@ -23,3 +23,5 @@ class Forecast
     end
   end
 end
+
+# Time.at(1632508893)
