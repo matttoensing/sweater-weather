@@ -9,11 +9,16 @@ require 'rails_helper'
      weather = Weather.new(attributes)
 
      expect(weather).to be_an_instance_of(Weather)
-     expect(weather.current_temp).to eq(75.2)
-     expect(weather.current_conditions).to eq('Sunny')
-     expect(weather.current_conditions)image).to eq('//cdn.weatherapi.com/weather/64x64/day/113.png')
-     expect(weather.humidity).to eq(18)
-     expect(weather.visibility).to eq(9.0)
-     
+
+       expect(weather.current_weather).to be_an_instance_of(CurrentWeather)
+
+
+     weather.daily_weather.each do |daily|
+       expect(daily).to be_an_instance_of(DailyWeather)
+     end
+
+     weather.hourly_weather.each do |hourly|
+       expect(hourly).to be_an_instance_of(HourlyWeather)
+     end
    end
  end

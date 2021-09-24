@@ -9,8 +9,8 @@ class DailyWeather
 
   def initialize(info)
     @date = info[:date]
-    @sunrise = info[:day][:astro][:sunrise]
-    @sunset = info[:day][:astro][:sunset]
+    @sunrise = info[:astro][:sunrise]
+    @sunset = info[:astro][:sunset]
     @max_temp = info[:day][:maxtemp_f]
     @min_temp = info[:day][:mintemp_f]
     @conditions = info[:day][:condition][:text]
