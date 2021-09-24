@@ -5,10 +5,11 @@ require 'rails_helper'
      response = File.read('spec/fixtures/image_attributes.json')
 
      attributes = JSON.parse(response, symbolize_names: true)
-     image = Image.new(attributes)
+     image = Image.new(attributes, 'boulder, co')
 
      expect(image).to be_an_instance_of(Image)
      expect(image.id).to eq(nil)
+     expect(image.location).to eq('boulder, co')
      expect(image.image_url).to eq(attributes[:urls][:full])
      expect(image.author).to eq(attributes[:user][:name])
      expect(image.author_url).to eq(attributes[:user][:portfolio_url])
