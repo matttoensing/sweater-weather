@@ -43,7 +43,7 @@ require 'rails_helper'
 
        expect(response).to_not be_successful
 
-       error = JSON.parse(response.body, symbolize_names: true)[:data]
+       error = JSON.parse(response.body, symbolize_names: true)
 
        expect(error).to have_key(:error)
        expect(error).to have_key(:message)
