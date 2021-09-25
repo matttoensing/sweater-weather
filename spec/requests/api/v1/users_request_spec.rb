@@ -48,7 +48,7 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
       expect(error).to have_key(:message)
     end
 
-    xit 'will not register a new user if request body is empty' do
+    it 'will not register a new user if request body is empty' do
       user_body = {
         email: "whatever@example.com",
         password: "password",
@@ -63,7 +63,50 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
 
-      error = JSON.parse(response.body, symbolize_names: true)[:data]
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to have_key(:error)
+      expect(error).to have_key(:message)
+    end
+
+    it 'will not register a new user if email has already been taken' do
+      user = create(:user)
+
+      user_body = {
+        email: user.email,
+        password: "password",
+        password_confirmation: "Password"
+      }
+
+
+      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+
+      post :create, params: {}
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to have_key(:error)
+      expect(error).to have_key(:message)
+    end
+
+    it 'will not register a new user if a field is missing' do
+      user_body = {
+        email: "whatever@example.com",
+        password: "password"
+      }
+
+
+      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+
+      post :create, params: {}
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      error = JSON.parse(response.body, symbolize_names: true)
 
       expect(error).to have_key(:error)
       expect(error).to have_key(:message)
