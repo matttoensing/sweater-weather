@@ -2,7 +2,11 @@ class Api::V1::UsersController < ApplicationController
   def create
     req = user_attributes
     user = User.create(email: req[:email], password: req[:password], password_confirmation: req[:password_confirmation])
-    json_response(UserSerializer.new(user))
+    if user.save
+      json_response(UserSerializer.new(user))
+    else
+      json_response(ErrorMessage.bad_credentials_for_user, :bad_request)
+    end
   end
 
   private
