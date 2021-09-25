@@ -2,13 +2,9 @@ class Api::V1::UsersController < ApplicationController
   after_action :set_code_on_create, only: [:create]
 
   def create
-    user = User.create(user_params)
+    user = User.create!(user_params)
 
-    if user.save
-      json_response(UserSerializer.new(user))
-    else
-      json_response(ErrorMessage.bad_credentials_for_user, :bad_request)
-    end
+    json_response(UserSerializer.new(user), :created)
   end
 
   private

@@ -18,7 +18,7 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
       expect(response).to be_successful
       expect(response.status).to eq(201)
       expect(User.count).to eq(1)
-      
+
       user = JSON.parse(response.body, symbolize_names: true)[:data]
 
       expect(user).to have_key(:type)
@@ -47,7 +47,6 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
 
       error = JSON.parse(response.body, symbolize_names: true)
 
-      expect(error).to have_key(:error)
       expect(error).to have_key(:message)
     end
 
@@ -68,7 +67,6 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
 
       error = JSON.parse(response.body, symbolize_names: true)
 
-      expect(error).to have_key(:error)
       expect(error).to have_key(:message)
     end
 
@@ -91,7 +89,6 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
 
       error = JSON.parse(response.body, symbolize_names: true)
 
-      expect(error).to have_key(:error)
       expect(error).to have_key(:message)
     end
 
@@ -111,7 +108,6 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
 
       error = JSON.parse(response.body, symbolize_names: true)
 
-      expect(error).to have_key(:error)
       expect(error).to have_key(:message)
     end
   end
