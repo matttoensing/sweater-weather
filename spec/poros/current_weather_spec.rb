@@ -36,6 +36,7 @@ require 'rails_helper'
 
       expect(current_weather).to be_an_instance_of(CurrentWeather)
       expect(current_weather.datetime).to eq(Time.at(attributes[:current][:dt]))
+      expect(current_weather.conditions).to eq(attributes[:current][:weather][0][:description])
       expect(current_weather.temperature).to eq(attributes[:current][:temp])
       expect(current_weather.humidity).to eq(attributes[:current][:humidity])
       expect(current_weather.feels_like).to eq(attributes[:current][:feels_like])
