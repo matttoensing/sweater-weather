@@ -12,4 +12,11 @@ class ErrorMessage
       "error": "bad request"
     }
   end
+
+  def self.bad_credentials_for_user
+    {
+      "message": "email or password is invalid",
+      "error": "bad request"
+    }
+  end
 end
