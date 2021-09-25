@@ -26,5 +26,27 @@ require 'rails_helper'
        expect(json[:attributes]).to have_key(:email)
        expect(json[:attributes]).to have_key(:api_key)
      end
+     end
+
+     describe 'sad path' do
+     it 'will send an error response if users password are invalid' do
+       user = create(:user)
+
+       user_body = {
+         email: user.email,
+         password: 'asdfasdfasdf'
+       }
+
+       headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+
+       post :create, params: {}, body: user_body.to_json, as: :json
+
+       expect(response).to_not be_successful
+
+       error = JSON.parse(response.body, symbolize_names: true)[:data]
+
+       expect(error).to have_key(:error)
+       expect(error).to have_key(:message)
+     end
    end
  end

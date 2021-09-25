@@ -5,5 +5,9 @@ module ExceptionHandler
     rescue_from ActiveRecord::RecordNotFound do |e|
       json_response({ message: e.message }, :not_found)
     end
+
+    rescue_from ActiveRecord::RecordInvalid do |e|
+      render(json: { message: e.message }, status: :bad_request)
+    end
   end
 end
