@@ -5,7 +5,7 @@ class Api::V1::ForecastController < ApplicationController
       forecast = ForecastFacade.create_weather(location.latitude, location.longitude)
       json_response(ForecastSerializer.new(forecast))
     else
-      json_response(ErrorMessage.forecast_location_not_included_error, :bad_request)
+      json_response(ErrorMessage.location_not_included_error, :bad_request)
     end
   end
 end
