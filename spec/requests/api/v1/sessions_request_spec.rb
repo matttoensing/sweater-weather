@@ -65,7 +65,6 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
 
       error = JSON.parse(response.body, symbolize_names: true)
 
-      expect(error).to have_key(:error)
       expect(error).to have_key(:message)
     end
 
@@ -85,7 +84,6 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
 
       error = JSON.parse(response.body, symbolize_names: true)
 
-      expect(error).to have_key(:error)
       expect(error).to have_key(:message)
     end
   end
