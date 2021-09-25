@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
   def create
-    req = user_attributes
     user = User.create(email: req[:email], password: req[:password], password_confirmation: req[:password_confirmation])
+
     if user.save
       json_response(UserSerializer.new(user))
     else
@@ -11,8 +11,10 @@ class Api::V1::UsersController < ApplicationController
 
   private
 
-  def user_attributes
+  def req
     json = request.body.read
-    req = json_request(json)
+    return nil if json.empty?
+
+    json_request(json)
   end
 end
