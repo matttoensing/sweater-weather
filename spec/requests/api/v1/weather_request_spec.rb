@@ -21,6 +21,7 @@ RSpec.describe 'weather api' do
       expect(weather[:attributes]).to have_key(:hourly_weather)
 
       expect(weather[:attributes][:current_weather]).to have_key(:temperature)
+      expect(weather[:attributes][:current_weather]).to have_key(:conditions)
       expect(weather[:attributes][:current_weather]).to have_key(:humidity)
       expect(weather[:attributes][:current_weather]).to have_key(:feels_like)
       expect(weather[:attributes][:current_weather]).to have_key(:uvi)
