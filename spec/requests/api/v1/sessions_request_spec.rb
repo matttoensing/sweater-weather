@@ -29,7 +29,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
   end
 
   describe 'sad path' do
-    it 'will send an error response if users password are invalid' do
+    it 'will send an error response if users password is invalid' do
       user = create(:user)
 
       user_body = {
@@ -49,12 +49,32 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
       expect(error).to have_key(:message)
     end
 
-    it 'will send an error response if users password are invalid' do
+    it 'will send an error response if users email is invalid' do
       user = create(:user)
 
       user_body = {
         email: 'test@test.com',
         password: user.password
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+
+      post :create, params: {}, body: user_body.to_json, as: :json
+
+      expect(response).to_not be_successful
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to have_key(:error)
+      expect(error).to have_key(:message)
+    end
+
+    it 'will send an error response if users password and email are invalid' do
+      user = create(:user)
+
+      user_body = {
+        email: 'test@test.com',
+        password: 'password'
       }
 
       headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
