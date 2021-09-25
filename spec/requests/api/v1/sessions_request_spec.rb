@@ -16,7 +16,7 @@ require 'rails_helper'
        post :create, params: {}, body: user_body.to_json, as: :json
 
        expect(response).to be_successful
-       # expect(response.status).to eq(200)
+       expect(response.status).to eq(200)
 
        json = JSON.parse(response.body, symbolize_names: true)[:data]
 
