@@ -35,7 +35,6 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
         password_confirmation: "Password"
       }
 
-
       headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
 
       post :create, params: {}, body: user_body.to_json, as: :json
@@ -43,7 +42,7 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
 
-      error = JSON.parse(response.body, symbolize_names: true)[:data]
+      error = JSON.parse(response.body, symbolize_names: true)
 
       expect(error).to have_key(:error)
       expect(error).to have_key(:message)
