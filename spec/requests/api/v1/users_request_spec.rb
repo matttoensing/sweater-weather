@@ -9,7 +9,6 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
         password_confirmation: "password"
       }
 
-
       headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
 
       post :create, params: {}, body: user_body.to_json, as: :json

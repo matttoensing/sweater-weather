@@ -8,13 +8,4 @@ class Api::V1::UsersController < ApplicationController
       json_response(ErrorMessage.bad_credentials_for_user, :bad_request)
     end
   end
-
-  private
-
-  def req
-    json = request.body.read
-    return nil if json.empty?
-
-    json_request(json)
-  end
 end
