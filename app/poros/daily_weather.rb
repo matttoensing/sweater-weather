@@ -8,7 +8,7 @@ class DailyWeather
               :icon
 
   def initialize(info)
-    @date = format_time(info[:dt])
+    @date = format_time(info[:dt]).strftime('%F')
     @sunrise = format_time(info[:sunrise])
     @sunset = format_time(info[:sunset])
     @max_temp = info[:temp][:max]

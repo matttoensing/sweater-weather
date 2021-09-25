@@ -15,7 +15,7 @@ class ErrorMessage
 
   def self.bad_credentials_for_user
     {
-      "message": "user credentials are invalid",
+      "message": "email or password is invalid",
       "error": "bad request"
     }
   end
