@@ -5,4 +5,11 @@ class ErrorMessage
       "error": "bad request"
     }
   end
+
+  def self.no_location_error
+    {
+      "message": "Location could not be found",
+      "error": "bad request"
+    }
+  end
 end

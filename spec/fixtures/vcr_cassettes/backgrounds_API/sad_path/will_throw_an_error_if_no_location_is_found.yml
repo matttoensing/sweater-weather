@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.unsplash.com/search/photos?client_id=lQuQWr3S174-R2ocQk9OoML3hFFRqs4lqZmvvfbAVSo&query=lakjfbiw09yqwekjfbqwef90h
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '57'
+      Server:
+      - Cowboy
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Request-Method:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Link,X-Total,X-Per-Page,X-RateLimit-Limit,X-RateLimit-Remaining
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Warning:
+      - The tags property in this endpoint is deprecated. https://changelog.unsplash.com/deprecations/2021/07/12/tags-search-deprecation.html
+      X-Total:
+      - '0'
+      X-Per-Page:
+      - '10'
+      Content-Type:
+      - application/json
+      Etag:
+      - W/"7814e74bfa62dcc505522924e3c8cf4b"
+      X-Ratelimit-Limit:
+      - '50'
+      X-Ratelimit-Remaining:
+      - '49'
+      X-Request-Id:
+      - d62c1f7b-4f91-47f0-9ceb-b15b133eee03
+      X-Runtime:
+      - '0.098028'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 vegur, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 25 Sep 2021 00:53:49 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-dca17736-DCA, cache-sjc10049-SJC
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1632531229.111559,VS0,VE177
+      Vary:
+      - Accept-Encoding, Origin,Authorization,client-geo-region
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":0,"total_pages":0,"results":[]}'
+  recorded_at: Sat, 25 Sep 2021 00:53:49 GMT
+recorded_with: VCR 6.0.0

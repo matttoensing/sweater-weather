@@ -32,5 +32,17 @@ RSpec.describe 'backgrounds API' do
       expect(error).to have_key(:error)
       expect(error).to have_key(:message)
     end
+
+    it 'will throw an error if no location is found', :vcr do
+      get '/api/v1/backgrounds', params: {location: 'lakjfbiw09yqwekjfbqwef90h'}
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to have_key(:error)
+      expect(error).to have_key(:message)
+    end
   end
 end
