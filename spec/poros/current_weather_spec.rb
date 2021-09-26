@@ -35,14 +35,14 @@ require 'rails_helper'
       current_weather = CurrentWeather.new(attributes)
 
       expect(current_weather).to be_an_instance_of(CurrentWeather)
-      expect(current_weather.datetime).to eq(Time.at(attributes[:current][:dt]))
+      expect(current_weather.datetime).to eq(Time.at(attributes[:current][:dt].to_s))
       expect(current_weather.conditions).to eq(attributes[:current][:weather][0][:description])
       expect(current_weather.temperature).to eq(attributes[:current][:temp].round(1))
       expect(current_weather.humidity).to eq(attributes[:current][:humidity])
       expect(current_weather.feels_like).to eq(attributes[:current][:feels_like])
       expect(current_weather.uvi).to eq(attributes[:current][:uvi])
       expect(current_weather.visibility).to eq(attributes[:current][:visibility])
-      expect(current_weather.sunset).to eq(Time.at(attributes[:current][:sunset]))
-      expect(current_weather.sunrise).to eq(Time.at(attributes[:current][:sunrise]))
+      expect(current_weather.sunset).to eq(Time.at(attributes[:current][:sunset].to_s))
+      expect(current_weather.sunrise).to eq(Time.at(attributes[:current][:sunrise].to_s))
    end
  end
