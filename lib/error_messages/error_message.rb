@@ -27,7 +27,7 @@ class ErrorMessage
     }
   end
 
-  def self.roadtrip_route_not_aavailable
+  def self.roadtrip_route_not_available
     {
       "message": "route does not exist",
       "error": "bad request"
