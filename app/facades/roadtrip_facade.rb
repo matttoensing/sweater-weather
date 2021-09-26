@@ -11,7 +11,14 @@ class RoadtripFacade
 
   def self.travel_time(from, to)
     directions = GeocodeService.get_directions_info(from, to)
-    time = directions[:route][:formattedTime].to_time
+    time = directions[:route][:formattedTime]
+    time.split(":").map(&:to_i)
+  end
+
+  def self.format_travel_time(from, to)
+    time = travel_time(from, to)
+    hours, minutes, seconds = time
+    "#{hours} Hours, #{minutes} Minutes"
   end
 
   def self.destination_location(to)
@@ -29,7 +36,7 @@ class RoadtripFacade
     {
       start_city: starting_location(from, to),
       end_city: ending_location(from, to),
-      travel_time: travel_time(from, to),
+      travel_time: format_travel_time(from, to),
       weather_at_eta: {
         temperature: destination_weather(to).temperature,
         conditions: destination_weather(to).conditions
