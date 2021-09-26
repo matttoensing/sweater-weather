@@ -2,40 +2,28 @@ require 'rails_helper'
 
  RSpec.describe DestinationWeather do
    it 'exists and has attributes' do
-     attributes = {
-    lat: 34.2809,
-    lon: -114.1838,
-    timezone: "America/Los_Angeles",
-    timezone_offset: -25200,
-    current: {
-        dt: 1632612004,
-        sunrise: 1632576427,
-        sunset: 1632619765,
-        temp: 89.62,
-        feels_like: 86.92,
-        pressure: 1010,
-        humidity: 27,
-        dew_point: 51.24,
-        uvi: 1.83,
-        clouds: 85,
-        visibility: 10000,
-        wind_speed: 6.26,
-        wind_deg: 204,
-        wind_gust: 6.69,
-        weather: [
-            {
-                id: 804,
-                main: "Clouds",
-                description: "overcast clouds",
-                icon: "04d"
-            }
-        ]
-    }}
+     response = File.read('spec/fixtures/destination_weather.json')
 
-    destination_weather = DestinationWeather.new(attributes)
+     attributes = JSON.parse(response, symbolize_names: true)
+
+
+    destination_weather = DestinationWeather.new(attributes, [0, 34, 1])
 
     expect(destination_weather).to be_an_instance_of(DestinationWeather)
-    expect(destination_weather.temperature).to eq(attributes[:current][:temp].round(1))
-    expect(destination_weather.conditions).to eq(attributes[:current][:weather][0][:description])
+    expect(destination_weather.temperature).to eq(attributes[:hourly][0][:temp].round(1))
+    expect(destination_weather.conditions).to eq(attributes[:hourly][0][:weather][0][:description])
+   end
+
+   it 'will show daily weather if time argument is greater than 48' do
+     response = File.read('spec/fixtures/destination_weather.json')
+
+     attributes = JSON.parse(response, symbolize_names: true)
+
+
+    destination_weather = DestinationWeather.new(attributes, [50, 34, 1])
+
+    expect(destination_weather).to be_an_instance_of(DestinationWeather)
+    expect(destination_weather.temperature).to eq(attributes[:daily][2][:temp][:day].round(1))
+    expect(destination_weather.conditions).to eq(attributes[:daily][2][:weather][0][:description])
    end
  end
