@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::RoadtripController, :type => :controller do
+RSpec.describe Api::V1::RoadtripController, type: :controller do
   describe 'happy path' do
     it 'can send information about a road trip', :vcr do
       user = create(:user)
 
-      request_body =  {
-        origin: "Denver,CO",
-        destination: "Pueblo,CO",
+      request_body = {
+        origin: 'Denver,CO',
+        destination: 'Pueblo,CO',
         api_key: user.api_key
       }
 
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}, body: request_body.to_json, as: :json
 
@@ -33,6 +33,5 @@ RSpec.describe Api::V1::RoadtripController, :type => :controller do
   end
 
   describe 'sad path' do
-    
   end
 end

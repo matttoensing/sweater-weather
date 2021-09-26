@@ -24,27 +24,26 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'faraday'
-gem 'figaro'
 gem 'factory_bot_rails'
 gem 'faker'
+gem 'faraday'
 gem 'fast_jsonapi'
+gem 'figaro'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
   gem 'rubocop-rails'
   gem 'shoulda-matchers'
-  gem 'webmock'
   gem 'vcr'
-  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
+  gem 'webmock'
 end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

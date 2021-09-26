@@ -1,7 +1,7 @@
 class RoadtripFacade
   def self.starting_location(from, to)
     directions = GeocodeService.get_directions_info(from, to)
-    directions[:route][:locations][0][:adminArea5] + ', ' +  directions[:route][:locations][0][:adminArea3]
+    directions[:route][:locations][0][:adminArea5] + ', ' + directions[:route][:locations][0][:adminArea3]
   end
 
   def self.ending_location(from, to)
@@ -12,7 +12,7 @@ class RoadtripFacade
   def self.travel_time(from, to)
     directions = GeocodeService.get_directions_info(from, to)
     time = directions[:route][:formattedTime]
-    time.split(":").map(&:to_i)
+    time.split(':').map(&:to_i)
   end
 
   def self.format_travel_time(from, to)

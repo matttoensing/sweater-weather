@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'backgrounds API' do
   describe 'happy path' do
     it 'can send a background image for a specific location', :vcr do
-      get '/api/v1/backgrounds', params: { location: 'denver,co'}
+      get '/api/v1/backgrounds', params: { location: 'denver,co' }
 
       expect(response).to be_successful
 
@@ -34,7 +34,7 @@ RSpec.describe 'backgrounds API' do
     end
 
     it 'will throw an error if no location is found', :vcr do
-      get '/api/v1/backgrounds', params: {location: 'lakjfbiw09yqwekjfbqwef90h'}
+      get '/api/v1/backgrounds', params: { location: 'lakjfbiw09yqwekjfbqwef90h' }
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)

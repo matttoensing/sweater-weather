@@ -8,4 +8,4 @@ class WeatherService < BaseService
     end
     get_json(response)
   end
- end
+end

@@ -9,7 +9,6 @@ class CurrentWeather
               :sunrise,
               :sunset
 
-
   def initialize(data)
     @datetime = format_time(data[:current][:dt]).to_s
     @conditions = data[:current][:weather][0][:description]

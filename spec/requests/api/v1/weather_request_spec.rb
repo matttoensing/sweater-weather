@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'weather api' do
   describe 'happy paths' do
     it 'can send weather attributes including current weather, daily weather, and hourly weather', :vcr do
-      get '/api/v1/forecast', params: { location: 'denver,co'}
+      get '/api/v1/forecast', params: { location: 'denver,co' }
 
       expect(response).to be_successful
 
@@ -43,7 +43,7 @@ RSpec.describe 'weather api' do
     end
 
     it 'only sends the neccessary data, and does not send what is not needed', :vcr do
-      get '/api/v1/forecast', params: { location: 'denver,co'}
+      get '/api/v1/forecast', params: { location: 'denver,co' }
 
       expect(response).to be_successful
 
