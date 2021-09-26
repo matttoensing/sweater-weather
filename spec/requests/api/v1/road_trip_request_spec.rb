@@ -33,5 +33,6 @@ RSpec.describe Api::V1::RoadtripController, :type => :controller do
   end
 
   describe 'sad path' do
+    
   end
 end
