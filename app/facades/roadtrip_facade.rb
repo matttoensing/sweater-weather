@@ -26,10 +26,10 @@ class RoadtripFacade
     Location.new(json)
   end
 
-  def self.destination_weather(to)
+  def self.destination_weather(from, to)
     location = destination_location(to)
     json = WeatherService.get_weather_info(location.latitude, location.longitude)
-    DestinationWeather.new(json)
+    DestinationWeather.new(json, travel_time(from, to))
   end
 
   def self.create_destination_info(from, to)
@@ -38,8 +38,8 @@ class RoadtripFacade
       end_city: ending_location(from, to),
       travel_time: format_travel_time(from, to),
       weather_at_eta: {
-        temperature: destination_weather(to).temperature,
-        conditions: destination_weather(to).conditions
+        temperature: destination_weather(from, to).temperature,
+        conditions: destination_weather(from, to).conditions
       }
     }
   end

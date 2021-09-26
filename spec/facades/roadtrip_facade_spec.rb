@@ -34,10 +34,10 @@ require 'rails_helper'
    end
 
    it 'can create weather for a road trip end point', :vcr do
-     weather = RoadtripFacade.destination_weather('denver,co')
+     weather = RoadtripFacade.destination_weather('boulder,co', 'denver,co')
 
      expect(weather).to be_an_instance_of(DestinationWeather)
-     expect(weather.temperature).to eq(84.6)
+     expect(weather.temperature).to eq(77.1)
      expect(weather.conditions).to eq("clear sky")
    end
 
@@ -47,7 +47,7 @@ require 'rails_helper'
       end_city: 'Denver, CO',
       travel_time: '0 Hours, 34 Minutes',
       weather_at_eta: {
-        temperature: 84.1,
+        temperature: 77.1,
         conditions: 'clear sky'
       }
     }
