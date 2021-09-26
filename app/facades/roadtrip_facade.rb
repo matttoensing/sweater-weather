@@ -45,7 +45,6 @@ class RoadtripFacade
   end
 
   def self.create_roadtrip(from, to)
-    json = GeocodeService.get_directions_info(from, to)
     Roadtrip.new(create_destination_info(from, to))
   end
 end
