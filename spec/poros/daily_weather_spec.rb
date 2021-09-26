@@ -49,8 +49,8 @@ require 'rails_helper'
    it 'exists and has attributes' do
      expect(@daily_weather).to be_an_instance_of(DailyWeather)
      expect(@daily_weather.date).to eq(Time.at(@attributes[:dt]).strftime('%F'))
-     expect(@daily_weather.sunrise).to eq(Time.at(@attributes[:sunrise]))
-     expect(@daily_weather.sunset).to eq(Time.at(@attributes[:sunset]))
+     expect(@daily_weather.sunrise).to eq(Time.at(@attributes[:sunrise]).to_s)
+     expect(@daily_weather.sunset).to eq(Time.at(@attributes[:sunset]).to_s)
      expect(@daily_weather.max_temp).to eq(@attributes[:temp][:max])
      expect(@daily_weather.min_temp).to eq(@attributes[:temp][:min])
      expect(@daily_weather.conditions).to eq(@attributes[:weather][0][:description])

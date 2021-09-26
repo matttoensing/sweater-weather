@@ -9,8 +9,8 @@ class DailyWeather
 
   def initialize(info)
     @date = format_time(info[:dt]).strftime('%F')
-    @sunrise = format_time(info[:sunrise])
-    @sunset = format_time(info[:sunset])
+    @sunrise = format_time(info[:sunrise]).to_s
+    @sunset = format_time(info[:sunset]).to_s
     @max_temp = info[:temp][:max]
     @min_temp = info[:temp][:min]
     @conditions = info[:weather][0][:description]
