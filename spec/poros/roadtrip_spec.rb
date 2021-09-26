@@ -15,6 +15,7 @@ require 'rails_helper'
     roadtrip = Roadtrip.new(attributes)
 
     expect(roadtrip).to be_an_instance_of(Roadtrip)
+    expect(roadtrip.id).to eq(nil)
     expect(roadtrip.start_city).to eq(attributes[:start_city])
     expect(roadtrip.end_city).to eq(attributes[:end_city])
     expect(roadtrip.travel_time).to eq(attributes[:travel_time])
