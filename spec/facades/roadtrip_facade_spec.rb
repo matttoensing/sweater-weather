@@ -13,10 +13,16 @@ require 'rails_helper'
      expect(RoadtripFacade.ending_location('boulder,co', 'denver,co')).to eq(expected)
    end
 
-   it 'can format time correctly for a road trip', :vcr do
-     expected = '34 Minutes'
+   it 'can determine time correctly for a road trip', :vcr do
+     expected = [0, 34, 1]
 
      expect(RoadtripFacade.travel_time('boulder,co', 'denver,co')).to eq(expected)
+   end
+
+   it 'can format time correctly for a road trip', :vcr do
+     expected = '0 Hours, 34 Minutes'
+
+     expect(RoadtripFacade.format_travel_time('boulder,co', 'denver,co')).to eq(expected)
    end
 
    it 'can create a location for a road trip end point', :vcr do
@@ -39,7 +45,7 @@ require 'rails_helper'
      expected = {
       start_city: 'Boulder, CO',
       end_city: 'Denver, CO',
-      travel_time: '34 Minutes',
+      travel_time: '0 Hours, 34 Minutes',
       weather_at_eta: {
         temperature: 84.1,
         conditions: 'clear sky'
