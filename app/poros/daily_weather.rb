@@ -11,8 +11,8 @@ class DailyWeather
     @date = format_time(info[:dt]).strftime('%F')
     @sunrise = format_time(info[:sunrise]).to_s
     @sunset = format_time(info[:sunset]).to_s
-    @max_temp = info[:temp][:max]
-    @min_temp = info[:temp][:min]
+    @max_temp = info[:temp][:max].round(1)
+    @min_temp = info[:temp][:min].round(1)
     @conditions = info[:weather][0][:description]
     @icon = format_icon(info[:weather][0][:icon])
   end

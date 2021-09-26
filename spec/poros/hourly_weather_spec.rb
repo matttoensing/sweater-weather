@@ -30,7 +30,7 @@ RSpec.describe HourlyWeather do
 
     expect(hourly_weather).to be_an_instance_of(HourlyWeather)
     expect(hourly_weather.time).to eq(Time.at(attributes[:dt]).strftime('%T'))
-    expect(hourly_weather.temperature).to eq(attributes[:temp])
+    expect(hourly_weather.temperature).to eq(attributes[:temp].round(1))
     expect(hourly_weather.conditions).to eq(attributes[:weather][0][:description])
     expect(hourly_weather.icon).to eq('http://openweathermap.org/img/w/03d.png')
   end
