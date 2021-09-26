@@ -13,6 +13,6 @@ class HourlyWeather
   end
 
   def format_time(time)
-    Time.at(time).strftime("%T")
+    Time.at(time).strftime('%T')
   end
 end

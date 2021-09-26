@@ -19,4 +19,11 @@ class ErrorMessage
       "error": "bad request"
     }
   end
+
+  def self.roadtrip_info_missing
+    {
+      "message": "must include origin and destination",
+      "error": "bad request"
+    }
+  end
 end

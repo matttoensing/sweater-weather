@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::SessionsController, :type => :controller do
+RSpec.describe Api::V1::SessionsController, type: :controller do
   describe 'happy path' do
     it 'can authenticate a user when the user requests to login' do
       user = create(:user)
@@ -11,7 +11,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
         password_confirmation: user.password
       }
 
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}, body: user_body.to_json, as: :json
 
@@ -37,7 +37,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
         password: 'asdfasdfasdf'
       }
 
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}, body: user_body.to_json, as: :json
 
@@ -57,7 +57,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
         password: user.password
       }
 
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}, body: user_body.to_json, as: :json
 
@@ -76,7 +76,7 @@ RSpec.describe Api::V1::SessionsController, :type => :controller do
         password: 'password'
       }
 
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}, body: user_body.to_json, as: :json
 

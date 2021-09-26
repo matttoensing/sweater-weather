@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::UsersController, :type => :controller do
+RSpec.describe Api::V1::UsersController, type: :controller do
   describe 'happy path' do
     it 'can register a new user' do
       user_body = {
-        email: "whatever@example.com",
-        password: "password",
-        password_confirmation: "password"
+        email: 'whatever@example.com',
+        password: 'password',
+        password_confirmation: 'password'
       }
 
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       expect(User.count).to eq(0)
 
@@ -25,7 +25,7 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
       expect(user).to have_key(:id)
       expect(user).to have_key(:attributes)
       expect(user[:attributes]).to have_key(:email)
-      expect(user[:attributes][:email]).to eq("whatever@example.com")
+      expect(user[:attributes][:email]).to eq('whatever@example.com')
       expect(user[:attributes]).to have_key(:api_key)
     end
   end
@@ -33,12 +33,12 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
   describe 'sad path' do
     it 'will not register a new user if the passwords are not correct' do
       user_body = {
-        email: "whatever@example.com",
-        password: "password",
-        password_confirmation: "Password"
+        email: 'whatever@example.com',
+        password: 'password',
+        password_confirmation: 'Password'
       }
 
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}, body: user_body.to_json, as: :json
 
@@ -52,13 +52,12 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
 
     it 'will not register a new user if request body is empty' do
       user_body = {
-        email: "whatever@example.com",
-        password: "password",
-        password_confirmation: "Password"
+        email: 'whatever@example.com',
+        password: 'password',
+        password_confirmation: 'Password'
       }
 
-
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}
 
@@ -75,12 +74,11 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
 
       user_body = {
         email: user.email,
-        password: "password",
-        password_confirmation: "Password"
+        password: 'password',
+        password_confirmation: 'Password'
       }
 
-
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}
 
@@ -94,12 +92,11 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
 
     it 'will not register a new user if a field is missing' do
       user_body = {
-        email: "whatever@example.com",
-        password: "password"
+        email: 'whatever@example.com',
+        password: 'password'
       }
 
-
-      headers = {"CONTENT_TYPE" => "application/json", "Accept": "application/json"}
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
 
       post :create, params: {}
 
