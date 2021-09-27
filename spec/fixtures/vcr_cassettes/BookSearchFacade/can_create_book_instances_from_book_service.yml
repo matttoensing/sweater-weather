@@ -1,0 +1,518 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/onecall?appid=94194bbad54aa4ff9fa9ac918fe1b330&lat=34.28088&lon=-114.18384&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Mon, 27 Sep 2021 16:28:23 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '19692'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/onecall?lat=34.28&lon=-114.18&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":34.2809,"lon":-114.1838,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1632760103,"sunrise":1632749312,"sunset":1632792395,"temp":79.84,"feels_like":79.84,"pressure":1013,"humidity":49,"dew_point":59,"uvi":1.67,"clouds":32,"visibility":10000,"wind_speed":5.84,"wind_deg":144,"wind_gust":8.16,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}]},"minutely":[{"dt":1632760140,"precipitation":0},{"dt":1632760200,"precipitation":0},{"dt":1632760260,"precipitation":0},{"dt":1632760320,"precipitation":0},{"dt":1632760380,"precipitation":0},{"dt":1632760440,"precipitation":0},{"dt":1632760500,"precipitation":0},{"dt":1632760560,"precipitation":0},{"dt":1632760620,"precipitation":0},{"dt":1632760680,"precipitation":0},{"dt":1632760740,"precipitation":0},{"dt":1632760800,"precipitation":0},{"dt":1632760860,"precipitation":0},{"dt":1632760920,"precipitation":0},{"dt":1632760980,"precipitation":0},{"dt":1632761040,"precipitation":0},{"dt":1632761100,"precipitation":0},{"dt":1632761160,"precipitation":0},{"dt":1632761220,"precipitation":0},{"dt":1632761280,"precipitation":0},{"dt":1632761340,"precipitation":0},{"dt":1632761400,"precipitation":0},{"dt":1632761460,"precipitation":0},{"dt":1632761520,"precipitation":0},{"dt":1632761580,"precipitation":0},{"dt":1632761640,"precipitation":0},{"dt":1632761700,"precipitation":0},{"dt":1632761760,"precipitation":0},{"dt":1632761820,"precipitation":0},{"dt":1632761880,"precipitation":0},{"dt":1632761940,"precipitation":0},{"dt":1632762000,"precipitation":0},{"dt":1632762060,"precipitation":0},{"dt":1632762120,"precipitation":0},{"dt":1632762180,"precipitation":0},{"dt":1632762240,"precipitation":0},{"dt":1632762300,"precipitation":0},{"dt":1632762360,"precipitation":0},{"dt":1632762420,"precipitation":0},{"dt":1632762480,"precipitation":0},{"dt":1632762540,"precipitation":0},{"dt":1632762600,"precipitation":0},{"dt":1632762660,"precipitation":0},{"dt":1632762720,"precipitation":0},{"dt":1632762780,"precipitation":0},{"dt":1632762840,"precipitation":0},{"dt":1632762900,"precipitation":0},{"dt":1632762960,"precipitation":0},{"dt":1632763020,"precipitation":0},{"dt":1632763080,"precipitation":0},{"dt":1632763140,"precipitation":0},{"dt":1632763200,"precipitation":0},{"dt":1632763260,"precipitation":0},{"dt":1632763320,"precipitation":0},{"dt":1632763380,"precipitation":0},{"dt":1632763440,"precipitation":0},{"dt":1632763500,"precipitation":0},{"dt":1632763560,"precipitation":0},{"dt":1632763620,"precipitation":0},{"dt":1632763680,"precipitation":0},{"dt":1632763740,"precipitation":0}],"hourly":[{"dt":1632758400,"temp":79.84,"feels_like":79.84,"pressure":1013,"humidity":49,"dew_point":59,"uvi":1.67,"clouds":32,"visibility":10000,"wind_speed":5.84,"wind_deg":144,"wind_gust":8.16,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632762000,"temp":79.99,"feels_like":79.99,"pressure":1013,"humidity":48,"dew_point":58.55,"uvi":3.41,"clouds":31,"visibility":10000,"wind_speed":7.2,"wind_deg":158,"wind_gust":8.16,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632765600,"temp":81.1,"feels_like":81.25,"pressure":1013,"humidity":45,"dew_point":57.78,"uvi":5.22,"clouds":29,"visibility":10000,"wind_speed":8.55,"wind_deg":166,"wind_gust":9.24,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632769200,"temp":82.85,"feels_like":82.33,"pressure":1012,"humidity":41,"dew_point":56.77,"uvi":6.53,"clouds":31,"visibility":10000,"wind_speed":8.97,"wind_deg":175,"wind_gust":9.1,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632772800,"temp":85.1,"feels_like":83.91,"pressure":1011,"humidity":37,"dew_point":55.92,"uvi":6.69,"clouds":46,"visibility":10000,"wind_speed":9.42,"wind_deg":190,"wind_gust":9.19,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632776400,"temp":87.42,"feels_like":85.84,"pressure":1010,"humidity":34,"dew_point":55.8,"uvi":5.71,"clouds":41,"visibility":10000,"wind_speed":8.46,"wind_deg":193,"wind_gust":8.75,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632780000,"temp":88.5,"feels_like":86.65,"pressure":1009,"humidity":32,"dew_point":55.4,"uvi":3.99,"clouds":45,"visibility":10000,"wind_speed":7.61,"wind_deg":192,"wind_gust":8.12,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632783600,"temp":89.2,"feels_like":87.22,"pressure":1009,"humidity":31,"dew_point":54.88,"uvi":2.12,"clouds":38,"visibility":10000,"wind_speed":7.34,"wind_deg":198,"wind_gust":8.41,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632787200,"temp":89.4,"feels_like":87.46,"pressure":1007,"humidity":31,"dew_point":54.61,"uvi":0.75,"clouds":33,"visibility":10000,"wind_speed":8.68,"wind_deg":207,"wind_gust":10.47,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"pop":0},{"dt":1632790800,"temp":88.88,"feels_like":86.86,"pressure":1007,"humidity":31,"dew_point":54.46,"uvi":0.13,"clouds":3,"visibility":10000,"wind_speed":7.52,"wind_deg":194,"wind_gust":10.02,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632794400,"temp":87.89,"feels_like":86.16,"pressure":1008,"humidity":33,"dew_point":55,"uvi":0,"clouds":2,"visibility":10000,"wind_speed":6.96,"wind_deg":167,"wind_gust":10.09,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632798000,"temp":87.12,"feels_like":85.32,"pressure":1008,"humidity":33,"dew_point":54.97,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":6.96,"wind_deg":173,"wind_gust":11.54,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632801600,"temp":86.43,"feels_like":84.78,"pressure":1008,"humidity":34,"dew_point":54.73,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":5.95,"wind_deg":161,"wind_gust":8.16,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632805200,"temp":85.64,"feels_like":83.98,"pressure":1009,"humidity":34,"dew_point":54.41,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":6.51,"wind_deg":157,"wind_gust":9.08,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632808800,"temp":84.34,"feels_like":82.89,"pressure":1008,"humidity":35,"dew_point":54.09,"uvi":0,"clouds":1,"visibility":10000,"wind_speed":7.65,"wind_deg":173,"wind_gust":14.41,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632812400,"temp":83.37,"feels_like":82.27,"pressure":1008,"humidity":37,"dew_point":54.3,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":10.6,"wind_deg":179,"wind_gust":19.8,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632816000,"temp":81.07,"feels_like":80.8,"pressure":1008,"humidity":41,"dew_point":55.42,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":9.01,"wind_deg":186,"wind_gust":17.98,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632819600,"temp":79.07,"feels_like":79.07,"pressure":1008,"humidity":46,"dew_point":56.59,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":6.31,"wind_deg":178,"wind_gust":9.98,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632823200,"temp":78.26,"feels_like":78.13,"pressure":1008,"humidity":50,"dew_point":58.21,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":6.15,"wind_deg":171,"wind_gust":9.24,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632826800,"temp":77.74,"feels_like":77.65,"pressure":1008,"humidity":52,"dew_point":58.55,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":5.28,"wind_deg":175,"wind_gust":6.8,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632830400,"temp":77.09,"feels_like":76.86,"pressure":1008,"humidity":50,"dew_point":57.33,"uvi":0,"clouds":0,"visibility":10000,"wind_speed":4.74,"wind_deg":171,"wind_gust":5.84,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632834000,"temp":76.42,"feels_like":76.03,"pressure":1008,"humidity":48,"dew_point":55.63,"uvi":0,"clouds":3,"visibility":10000,"wind_speed":4,"wind_deg":167,"wind_gust":5.08,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"pop":0},{"dt":1632837600,"temp":76.86,"feels_like":76.41,"pressure":1008,"humidity":46,"dew_point":54.43,"uvi":0,"clouds":4,"visibility":10000,"wind_speed":4.61,"wind_deg":161,"wind_gust":5.7,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632841200,"temp":78.89,"feels_like":78.89,"pressure":1009,"humidity":42,"dew_point":54.25,"uvi":0.49,"clouds":3,"visibility":10000,"wind_speed":7.74,"wind_deg":175,"wind_gust":15.39,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632844800,"temp":81,"feels_like":80.74,"pressure":1009,"humidity":41,"dew_point":54.97,"uvi":1.64,"clouds":2,"visibility":10000,"wind_speed":13.04,"wind_deg":182,"wind_gust":17,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632848400,"temp":82.98,"feels_like":82.18,"pressure":1009,"humidity":39,"dew_point":55.45,"uvi":3.37,"clouds":2,"visibility":10000,"wind_speed":15.08,"wind_deg":186,"wind_gust":17.96,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632852000,"temp":85.32,"feels_like":83.97,"pressure":1008,"humidity":36,"dew_point":55.71,"uvi":5.18,"clouds":1,"visibility":10000,"wind_speed":16.64,"wind_deg":188,"wind_gust":19.53,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632855600,"temp":87.57,"feels_like":86,"pressure":1007,"humidity":34,"dew_point":56.01,"uvi":6.24,"clouds":0,"visibility":10000,"wind_speed":17.81,"wind_deg":188,"wind_gust":19.95,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632859200,"temp":89.35,"feels_like":87.6,"pressure":1006,"humidity":32,"dew_point":55.6,"uvi":6.39,"clouds":0,"visibility":10000,"wind_speed":17.54,"wind_deg":191,"wind_gust":18.86,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632862800,"temp":90.88,"feels_like":88.74,"pressure":1005,"humidity":29,"dew_point":54.5,"uvi":5.44,"clouds":0,"visibility":10000,"wind_speed":17.31,"wind_deg":191,"wind_gust":18.39,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632866400,"temp":92.12,"feels_like":89.29,"pressure":1004,"humidity":25,"dew_point":51.57,"uvi":3.75,"clouds":0,"visibility":10000,"wind_speed":17.31,"wind_deg":196,"wind_gust":18.84,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632870000,"temp":92.59,"feels_like":88.75,"pressure":1003,"humidity":19,"dew_point":44.4,"uvi":1.99,"clouds":0,"visibility":10000,"wind_speed":18.34,"wind_deg":212,"wind_gust":19.06,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"pop":0},{"dt":1632873600,"temp":91.02,"feels_like":87.03,"pressure":1003,"humidity":17,"dew_point":40.01,"uvi":0.7,"clouds":12,"visibility":10000,"wind_speed":16.71,"wind_deg":216,"wind_gust":19.06,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1632877200,"temp":89.4,"feels_like":85.55,"pressure":1003,"humidity":17,"dew_point":39.16,"uvi":0.11,"clouds":11,"visibility":10000,"wind_speed":13.73,"wind_deg":218,"wind_gust":17.92,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"pop":0},{"dt":1632880800,"temp":86.25,"feels_like":83.03,"pressure":1003,"humidity":20,"dew_point":40.3,"uvi":0,"clouds":11,"visibility":10000,"wind_speed":9.6,"wind_deg":218,"wind_gust":16.96,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1632884400,"temp":84.74,"feels_like":81.9,"pressure":1004,"humidity":21,"dew_point":41.09,"uvi":0,"clouds":12,"visibility":10000,"wind_speed":6.35,"wind_deg":197,"wind_gust":8.01,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1632888000,"temp":83.52,"feels_like":81.01,"pressure":1004,"humidity":22,"dew_point":40.55,"uvi":0,"clouds":28,"visibility":10000,"wind_speed":8.46,"wind_deg":180,"wind_gust":10.96,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"pop":0},{"dt":1632891600,"temp":81.63,"feels_like":79.77,"pressure":1005,"humidity":23,"dew_point":40.42,"uvi":0,"clouds":40,"visibility":10000,"wind_speed":12.03,"wind_deg":188,"wind_gust":23.78,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"pop":0},{"dt":1632895200,"temp":79.29,"feels_like":79.29,"pressure":1006,"humidity":25,"dew_point":41.07,"uvi":0,"clouds":37,"visibility":10000,"wind_speed":11.95,"wind_deg":179,"wind_gust":23.24,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"pop":0},{"dt":1632898800,"temp":77.43,"feels_like":76.19,"pressure":1006,"humidity":28,"dew_point":41.9,"uvi":0,"clouds":88,"visibility":10000,"wind_speed":9.26,"wind_deg":184,"wind_gust":15.21,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"pop":0},{"dt":1632902400,"temp":76.03,"feels_like":74.79,"pressure":1006,"humidity":31,"dew_point":43.16,"uvi":0,"clouds":47,"visibility":10000,"wind_speed":8.37,"wind_deg":195,"wind_gust":13,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"pop":0},{"dt":1632906000,"temp":74.53,"feels_like":73.33,"pressure":1006,"humidity":35,"dew_point":45.03,"uvi":0,"clouds":32,"visibility":10000,"wind_speed":5.97,"wind_deg":189,"wind_gust":9.73,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03n"}],"pop":0},{"dt":1632909600,"temp":73.56,"feels_like":72.41,"pressure":1007,"humidity":38,"dew_point":46.62,"uvi":0,"clouds":24,"visibility":10000,"wind_speed":4.07,"wind_deg":164,"wind_gust":5.3,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1632913200,"temp":72.79,"feels_like":71.69,"pressure":1007,"humidity":41,"dew_point":47.84,"uvi":0,"clouds":21,"visibility":10000,"wind_speed":3.98,"wind_deg":165,"wind_gust":4.94,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1632916800,"temp":71.82,"feels_like":70.77,"pressure":1008,"humidity":44,"dew_point":48.81,"uvi":0,"clouds":21,"visibility":10000,"wind_speed":3.24,"wind_deg":147,"wind_gust":3.62,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02n"}],"pop":0},{"dt":1632920400,"temp":71.28,"feels_like":70.21,"pressure":1008,"humidity":45,"dew_point":49.14,"uvi":0,"clouds":99,"visibility":10000,"wind_speed":2.8,"wind_deg":162,"wind_gust":3.09,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04n"}],"pop":0},{"dt":1632924000,"temp":72,"feels_like":71.01,"pressure":1009,"humidity":45,"dew_point":49.69,"uvi":0,"clouds":97,"visibility":10000,"wind_speed":2.93,"wind_deg":144,"wind_gust":3.18,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0},{"dt":1632927600,"temp":74.14,"feels_like":73.33,"pressure":1010,"humidity":44,"dew_point":50.77,"uvi":0.43,"clouds":90,"visibility":10000,"wind_speed":3.69,"wind_deg":144,"wind_gust":6.15,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"pop":0}],"daily":[{"dt":1632769200,"sunrise":1632749312,"sunset":1632792395,"moonrise":1632807300,"moonset":1632771780,"moon_phase":0.71,"temp":{"day":82.85,"min":74.59,"max":89.4,"night":84.34,"eve":88.88,"morn":76.21},"feels_like":{"day":82.33,"night":82.89,"eve":86.86,"morn":76.21},"pressure":1012,"humidity":41,"dew_point":56.77,"wind_speed":9.42,"wind_deg":190,"wind_gust":14.41,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":31,"pop":0.41,"rain":0.11,"uvi":6.69},{"dt":1632855600,"sunrise":1632835754,"sunset":1632878710,"moonrise":1632896640,"moonset":1632861480,"moon_phase":0.75,"temp":{"day":87.57,"min":76.42,"max":92.59,"night":79.29,"eve":89.4,"morn":76.42},"feels_like":{"day":86,"night":79.29,"eve":85.55,"morn":76.03},"pressure":1007,"humidity":34,"dew_point":56.01,"wind_speed":18.34,"wind_deg":212,"wind_gust":23.78,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":6.39},{"dt":1632942000,"sunrise":1632922197,"sunset":1632965026,"moonrise":0,"moonset":1632950940,"moon_phase":0.77,"temp":{"day":83.14,"min":71.28,"max":87.51,"night":80.98,"eve":86.25,"morn":71.28},"feels_like":{"day":81.84,"night":79.41,"eve":83.41,"morn":70.21},"pressure":1010,"humidity":35,"dew_point":53.02,"wind_speed":9.26,"wind_deg":184,"wind_gust":15.21,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":80,"pop":0.09,"uvi":5.38},{"dt":1633028400,"sunrise":1633008641,"sunset":1633051342,"moonrise":1632986220,"moonset":1633040160,"moon_phase":0.8,"temp":{"day":84.07,"min":74.61,"max":90.27,"night":80.65,"eve":90.27,"morn":74.61},"feels_like":{"day":81.16,"night":78.76,"eve":86.13,"morn":72.7},"pressure":1013,"humidity":12,"dew_point":26.55,"wind_speed":13.96,"wind_deg":319,"wind_gust":20.51,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":6.04},{"dt":1633114800,"sunrise":1633095084,"sunset":1633137658,"moonrise":1633076160,"moonset":1633129080,"moon_phase":0.84,"temp":{"day":87.44,"min":75.02,"max":93.24,"night":83.59,"eve":93.24,"morn":75.02},"feels_like":{"day":83.84,"night":80.94,"eve":88.77,"morn":73.11},"pressure":1013,"humidity":16,"dew_point":36.25,"wind_speed":5.46,"wind_deg":201,"wind_gust":8.21,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7},{"dt":1633201200,"sunrise":1633181528,"sunset":1633223975,"moonrise":1633166280,"moonset":1633217700,"moon_phase":0.87,"temp":{"day":90.28,"min":77.9,"max":94.48,"night":84.78,"eve":94.48,"morn":77.9},"feels_like":{"day":86.34,"night":81.91,"eve":90.01,"morn":76.48},"pressure":1014,"humidity":17,"dew_point":40.17,"wind_speed":6.02,"wind_deg":290,"wind_gust":9.86,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7},{"dt":1633287600,"sunrise":1633267972,"sunset":1633310292,"moonrise":1633256580,"moonset":1633306200,"moon_phase":0.9,"temp":{"day":91.63,"min":79.2,"max":95.83,"night":86.16,"eve":95.83,"morn":79.2},"feels_like":{"day":87.58,"night":83.08,"eve":91.45,"morn":79.2},"pressure":1012,"humidity":17,"dew_point":41.2,"wind_speed":3.87,"wind_deg":269,"wind_gust":7.16,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":4,"pop":0,"uvi":7},{"dt":1633374000,"sunrise":1633354416,"sunset":1633396610,"moonrise":1633346880,"moonset":1633394520,"moon_phase":0.94,"temp":{"day":91.85,"min":82.51,"max":93.33,"night":82.51,"eve":92.84,"morn":82.72},"feels_like":{"day":88.02,"night":81.03,"eve":89.15,"morn":80.56},"pressure":1008,"humidity":19,"dew_point":44.15,"wind_speed":6.71,"wind_deg":21,"wind_gust":8.93,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":84,"pop":0.22,"rain":0.24,"uvi":7}]}'
+  recorded_at: Mon, 27 Sep 2021 16:28:23 GMT
+- request:
+    method: get
+    uri: http://openlibrary.org/search.json?limit=5&q=denver,co
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Date:
+      - Mon, 27 Sep 2021 16:28:23 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Method:
+      - GET, OPTIONS
+      Access-Control-Max-Age:
+      - '86400'
+      X-Ol-Stats:
+      - '"SR 1 0.163 TT 0 0.165"'
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "numFound": 35990,
+            "start": 0,
+            "numFoundExact": true,
+            "docs": [
+                {
+                    "key": "/works/OL8503198W",
+                    "text": [
+                        "/works/OL8503198W",
+                        "Denver, Co",
+                        "OL10909613M",
+                        "9780762507849",
+                        "0762507845",
+                        "Universal Map Enterprises",
+                        "OL2843451A",
+                        "Universal Map"
+                    ],
+                    "type": "work",
+                    "seed": [
+                        "/books/OL10909613M",
+                        "/works/OL8503198W",
+                        "/authors/OL2843451A"
+                    ],
+                    "title": "Denver, Co",
+                    "title_suggest": "Denver, Co",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL10909613M"
+                    ],
+                    "publish_date": [
+                        "January 2001"
+                    ],
+                    "publish_year": [
+                        2001
+                    ],
+                    "first_publish_year": 2001,
+                    "isbn": [
+                        "9780762507849",
+                        "0762507845"
+                    ],
+                    "last_modified_i": 1338943517,
+                    "ebook_count_i": 0,
+                    "publisher": [
+                        "Universal Map Enterprises"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL2843451A"
+                    ],
+                    "author_name": [
+                        "Universal Map"
+                    ],
+                    "publisher_facet": [
+                        "Universal Map Enterprises"
+                    ],
+                    "_version_": 1700720295581581317,
+                    "author_facet": [
+                        "OL2843451A Universal Map"
+                    ]
+                },
+                {
+                    "key": "/works/OL8808821W",
+                    "text": [
+                        "/works/OL8808821W",
+                        "University of Denver Co 2007",
+                        "OL8537031M",
+                        "150368610",
+                        "1427401683",
+                        "9781427401687",
+                        "College Prowler",
+                        "OL3010394A",
+                        "College Prowler"
+                    ],
+                    "type": "work",
+                    "seed": [
+                        "/books/OL8537031M",
+                        "/works/OL8808821W",
+                        "/authors/OL3010394A"
+                    ],
+                    "title": "University of Denver Co 2007",
+                    "title_suggest": "University of Denver Co 2007",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL8537031M"
+                    ],
+                    "publish_date": [
+                        "July 1, 2006"
+                    ],
+                    "publish_year": [
+                        2006
+                    ],
+                    "first_publish_year": 2006,
+                    "oclc": [
+                        "150368610"
+                    ],
+                    "isbn": [
+                        "1427401683",
+                        "9781427401687"
+                    ],
+                    "last_modified_i": 1304171421,
+                    "ebook_count_i": 0,
+                    "cover_edition_key": "OL8537031M",
+                    "cover_i": 1847337,
+                    "publisher": [
+                        "College Prowler"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL3010394A"
+                    ],
+                    "author_name": [
+                        "College Prowler"
+                    ],
+                    "id_goodreads": [
+                        "2985742"
+                    ],
+                    "publisher_facet": [
+                        "College Prowler"
+                    ],
+                    "_version_": 1700720648496611328,
+                    "author_facet": [
+                        "OL3010394A College Prowler"
+                    ]
+                },
+                {
+                    "key": "/works/OL4437736W",
+                    "text": [
+                        "/works/OL4437736W",
+                        "Denver Co Deluxe Flip Map",
+                        "OL10911511M",
+                        "9780762557363",
+                        "0762557362",
+                        "Universal Map Enterprises",
+                        "OL882946A",
+                        "Laura Ryder"
+                    ],
+                    "type": "work",
+                    "seed": [
+                        "/books/OL10911511M",
+                        "/works/OL4437736W",
+                        "/authors/OL882946A"
+                    ],
+                    "title": "Denver Co Deluxe Flip Map",
+                    "title_suggest": "Denver Co Deluxe Flip Map",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL10911511M"
+                    ],
+                    "publish_date": [
+                        "January 2003"
+                    ],
+                    "publish_year": [
+                        2003
+                    ],
+                    "first_publish_year": 2003,
+                    "isbn": [
+                        "9780762557363",
+                        "0762557362"
+                    ],
+                    "last_modified_i": 1260838560,
+                    "ebook_count_i": 0,
+                    "publisher": [
+                        "Universal Map Enterprises"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL882946A"
+                    ],
+                    "author_name": [
+                        "Laura Ryder"
+                    ],
+                    "publisher_facet": [
+                        "Universal Map Enterprises"
+                    ],
+                    "_version_": 1700714547654950913,
+                    "author_facet": [
+                        "OL882946A Laura Ryder"
+                    ]
+                },
+                {
+                    "key": "/works/OL19500062W",
+                    "text": [
+                        "/works/OL19500062W",
+                        "Photovoltaic safety, Denver, CO, 1988",
+                        "Photovoltaic safety.",
+                        "OL2061373M",
+                        "editor, Werner Luft.",
+                        "88042854",
+                        "Solar Energy Research Institute.",
+                        "Photovoltaics Safety Conference (2nd : 1988 : Denver, Colo.)",
+                        "Luft, Werner.",
+                        "9780883183663",
+                        "0883183668",
+                        "American Institute of Physics",
+                        "OL714790A",
+                        "Werner Luft",
+                        "Photovoltaic cells",
+                        "Safety measures",
+                        "Solar cells",
+                        "Congresses",
+                        "Design and construction"
+                    ],
+                    "type": "work",
+                    "seed": [
+                        "/books/OL2061373M",
+                        "/works/OL19500062W",
+                        "/subjects/photovoltaic_cells",
+                        "/subjects/safety_measures",
+                        "/subjects/solar_cells",
+                        "/subjects/congresses",
+                        "/subjects/design_and_construction",
+                        "/authors/OL714790A"
+                    ],
+                    "title": "Photovoltaic safety, Denver, CO, 1988",
+                    "title_suggest": "Photovoltaic safety, Denver, CO, 1988",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL2061373M"
+                    ],
+                    "publish_date": [
+                        "1988"
+                    ],
+                    "publish_year": [
+                        1988
+                    ],
+                    "first_publish_year": 1988,
+                    "lccn": [
+                        "88042854"
+                    ],
+                    "publish_place": [
+                        "New York"
+                    ],
+                    "contributor": [
+                        "Solar Energy Research Institute.",
+                        "Photovoltaics Safety Conference (2nd : 1988 : Denver, Colo.)",
+                        "Luft, Werner."
+                    ],
+                    "lcc": [
+                        "TK-8322.00000000.P46 1988"
+                    ],
+                    "ddc": [
+                        "621.31244"
+                    ],
+                    "isbn": [
+                        "9780883183663",
+                        "0883183668"
+                    ],
+                    "last_modified_i": 1604827192,
+                    "ebook_count_i": 0,
+                    "cover_edition_key": "OL2061373M",
+                    "cover_i": 4745684,
+                    "publisher": [
+                        "American Institute of Physics"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL714790A"
+                    ],
+                    "author_name": [
+                        "Werner Luft"
+                    ],
+                    "subject": [
+                        "Photovoltaic cells",
+                        "Safety measures",
+                        "Solar cells",
+                        "Congresses",
+                        "Design and construction"
+                    ],
+                    "id_goodreads": [
+                        "3793862"
+                    ],
+                    "publisher_facet": [
+                        "American Institute of Physics"
+                    ],
+                    "subject_facet": [
+                        "Congresses",
+                        "Design and construction",
+                        "Photovoltaic cells",
+                        "Safety measures",
+                        "Solar cells"
+                    ],
+                    "_version_": 1700705535019450369,
+                    "lcc_sort": "TK-8322.00000000.P46 1988",
+                    "author_facet": [
+                        "OL714790A Werner Luft"
+                    ],
+                    "subject_key": [
+                        "congresses",
+                        "design_and_construction",
+                        "photovoltaic_cells",
+                        "safety_measures",
+                        "solar_cells"
+                    ],
+                    "ddc_sort": "621.31244"
+                },
+                {
+                    "key": "/works/OL8541064W",
+                    "text": [
+                        "/works/OL8541064W",
+                        "Insight Fleximap Denver, CO (Insight Fleximaps)",
+                        "OL9197762M",
+                        "64038908",
+                        "9812582622",
+                        "9789812582621",
+                        "American Map Corporation",
+                        "OL2859862A",
+                        "American Map Corp"
+                    ],
+                    "type": "work",
+                    "seed": [
+                        "/books/OL9197762M",
+                        "/works/OL8541064W",
+                        "/authors/OL2859862A"
+                    ],
+                    "title": "Insight Fleximap Denver, CO (Insight Fleximaps)",
+                    "title_suggest": "Insight Fleximap Denver, CO (Insight Fleximaps)",
+                    "has_fulltext": false,
+                    "edition_count": 1,
+                    "edition_key": [
+                        "OL9197762M"
+                    ],
+                    "publish_date": [
+                        "January 30, 2006"
+                    ],
+                    "publish_year": [
+                        2006
+                    ],
+                    "first_publish_year": 2006,
+                    "oclc": [
+                        "64038908"
+                    ],
+                    "isbn": [
+                        "9812582622",
+                        "9789812582621"
+                    ],
+                    "last_modified_i": 1304090516,
+                    "ebook_count_i": 0,
+                    "cover_edition_key": "OL9197762M",
+                    "cover_i": 2302739,
+                    "publisher": [
+                        "American Map Corporation"
+                    ],
+                    "language": [
+                        "eng"
+                    ],
+                    "author_key": [
+                        "OL2859862A"
+                    ],
+                    "author_name": [
+                        "American Map Corp"
+                    ],
+                    "publisher_facet": [
+                        "American Map Corporation"
+                    ],
+                    "_version_": 1700720351972950018,
+                    "author_facet": [
+                        "OL2859862A American Map Corp"
+                    ]
+                }
+            ],
+            "num_found": 35990,
+            "q": "denver,co",
+            "offset": null
+        }
+  recorded_at: Mon, 27 Sep 2021 16:28:23 GMT
+recorded_with: VCR 6.0.0
