@@ -31,6 +31,7 @@ require 'rails_helper'
      book_search = BookSearch.new(location, forecast, book_data)
 
      expect(book_search).to be_an_instance_of(BookSearch)
+     expect(book_search.id).to eq(nil)
      expect(book_search.destination).to eq(location)
      expect(book_search.total_books_found).to eq(book_data[:numFound])
      expect(book_search.forecast).to be_an_instance_of(Weather)
