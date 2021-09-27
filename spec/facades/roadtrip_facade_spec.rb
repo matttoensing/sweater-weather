@@ -57,7 +57,12 @@ RSpec.describe RoadtripFacade do
 
   it 'can create a road trip', :vcr do
     road_trip = RoadtripFacade.create_roadtrip('boulder,co', 'denver,co')
-
     expect(road_trip).to be_an_instance_of(Roadtrip)
+  end
+
+  it 'will return nil if route does not exist', :vcr do
+    road_trip = RoadtripFacade.create_roadtrip('boulder,co', 'london')
+
+    expect(road_trip).to eq(nil)
   end
 end

@@ -50,8 +50,8 @@ RSpec.describe DailyWeather do
     expect(@daily_weather.date).to eq(Time.at(@attributes[:dt]).strftime('%F'))
     expect(@daily_weather.sunrise).to eq(Time.at(@attributes[:sunrise]).to_s)
     expect(@daily_weather.sunset).to eq(Time.at(@attributes[:sunset]).to_s)
-    expect(@daily_weather.max_temp).to eq(@attributes[:temp][:max])
-    expect(@daily_weather.min_temp).to eq(@attributes[:temp][:min])
+    expect(@daily_weather.max_temp).to eq(@attributes[:temp][:max].round(1))
+    expect(@daily_weather.min_temp).to eq(@attributes[:temp][:min].round(1))
     expect(@daily_weather.conditions).to eq(@attributes[:weather][0][:description])
     expect(@daily_weather.icon).to eq('http://openweathermap.org/img/w/03d.png')
   end

@@ -3,7 +3,7 @@ class HourlyWeather
 
   def initialize(info)
     @time = format_time(info[:dt])
-    @temperature = info[:temp]
+    @temperature = info[:temp].round(1)
     @conditions = info[:weather][0][:description]
     @icon = format_icon(info[:weather][0][:icon])
   end

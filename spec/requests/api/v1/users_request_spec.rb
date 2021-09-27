@@ -19,14 +19,18 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       expect(response.status).to eq(201)
       expect(User.count).to eq(1)
 
-      user = JSON.parse(response.body, symbolize_names: true)[:data]
+      json = JSON.parse(response.body, symbolize_names: true)[:data]
 
-      expect(user).to have_key(:type)
-      expect(user).to have_key(:id)
-      expect(user).to have_key(:attributes)
-      expect(user[:attributes]).to have_key(:email)
-      expect(user[:attributes][:email]).to eq('whatever@example.com')
-      expect(user[:attributes]).to have_key(:api_key)
+      expect(json).to have_key(:type)
+      expect(json[:type].class).to eq(String)
+      expect(json).to have_key(:id)
+      expect(json[:id].class).to eq(String)
+      expect(json).to have_key(:attributes)
+      expect(json[:attributes].class).to eq(Hash)
+      expect(json[:attributes]).to have_key(:email)
+      expect(json[:attributes][:email].class).to eq(String)
+      expect(json[:attributes]).to have_key(:api_key)
+      expect(json[:attributes][:api_key].class).to eq(String)
     end
   end
 

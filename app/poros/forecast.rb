@@ -6,22 +6,28 @@ class Forecast
 
   def initialize(data)
     @id = nil
-    @current_weather = CurrentWeather.new(data)
-    @daily_weather = create_daily_weather(data[:daily])
-    @hourly_weather = create_hourly_weather(data[:hourly])
-  end
-
-  def create_daily_weather(data)
-    data[1..5].map do |details|
-      DailyWeather.new(details)
-    end
-  end
-
-  def create_hourly_weather(data)
-    data[1..8].map do |details|
-      HourlyWeather.new(details)
-    end
+    @current_weather = data[:current_weather]
+    @daily_weather = data[:daily_weather]
+    @hourly_weather = data[:hourly_weather]
   end
 end
 
-# Time.at(1632508893)
+
+# def initialize(data)
+#   @id = nil
+#   @current_weather = CurrentWeather.new(data)
+#   @daily_weather = create_daily_weather(data[:daily])
+#   @hourly_weather = create_hourly_weather(data[:hourly])
+# end
+
+# def create_daily_weather(data)
+#   data[1..5].map do |details|
+#     DailyWeather.new(details)
+#   end
+# end
+#
+# def create_hourly_weather(data)
+#   data[1..8].map do |details|
+#     HourlyWeather.new(details)
+#   end
+# end
