@@ -20,15 +20,24 @@ RSpec.describe Api::V1::RoadtripController, type: :controller do
       road_trip = JSON.parse(response.body, symbolize_names: true)[:data]
 
       expect(road_trip).to have_key(:id)
+      expect(road_trip[:id].class).to eq(NilClass)
       expect(road_trip[:id]).to eq(nil)
       expect(road_trip[:type]).to eq('roadtrip')
+      expect(road_trip[:type].class).to eq(String)
       expect(road_trip).to have_key(:attributes)
+      expect(road_trip[:attributes].class).to eq(Hash)
       expect(road_trip[:attributes]).to have_key(:start_city)
+      expect(road_trip[:attributes][:start_city].class).to eq(String)
       expect(road_trip[:attributes]).to have_key(:end_city)
+      expect(road_trip[:attributes][:end_city].class).to eq(String)
       expect(road_trip[:attributes]).to have_key(:travel_time)
+      expect(road_trip[:attributes][:travel_time].class).to eq(String)
       expect(road_trip[:attributes]).to have_key(:weather_at_eta)
+      expect(road_trip[:attributes][:weather_at_eta].class).to eq(Hash)
       expect(road_trip[:attributes][:weather_at_eta]).to have_key(:temperature)
+      expect(road_trip[:attributes][:weather_at_eta][:temperature].class).to eq(Float)
       expect(road_trip[:attributes][:weather_at_eta]).to have_key(:conditions)
+      expect(road_trip[:attributes][:weather_at_eta][:conditions].class).to eq(String)
     end
   end
 
