@@ -12,7 +12,7 @@ require 'rails_helper'
        expect(books).to have_key(:id)
        expect(books[:id]).to eq(nil)
        expect(books).to have_key(:type)
-       expect(book[:type]).to eq('books')
+       expect(books[:type]).to eq('books')
        expect(books).to have_key(:attributes)
        expect(books[:attributes]).to have_key(:destination)
        expect(books[:attributes]).to have_key(:forecast)
@@ -37,15 +37,52 @@ require 'rails_helper'
        expect(books[:type].class).to eq(String)
        expect(books[:attributes].class).to eq(Hash)
        expect(books[:attributes][:destination].class).to eq(String)
-       expect(books[:attributes]).to have_key(:forecast)
        expect(books[:attributes][:forecast].class).to eq(Hash)
        expect(books[:attributes][:forecast][:summary].class).to eq(String)
        expect(books[:attributes][:forecast][:temperature].class).to eq(String)
-       expect(books[:attributes][:total_books_found].class).to eq(String)
+       expect(books[:attributes][:total_books_found].class).to eq(Integer)
        expect(books[:attributes][:books].class).to eq(Array)
        expect(books[:attributes][:books][0][:isbn].class).to eq(Array)
        expect(books[:attributes][:books][0][:title].class).to eq(String)
-       expect(books[:attributes][:books][0][:publisher].class).to eq(String)
+       expect(books[:attributes][:books][0][:publisher].class).to eq(Array)
+     end
+
+     describe 'sad paths' do
+       it 'will a bad request error if location is missing', :vcr do
+         get '/api/v1/book-search', params: { quantity: 5 }
+
+         expect(response).to_not be_successful
+         expect(response.status).to eq(400)
+
+         error = JSON.parse(response.body, symbolize_names: true)
+
+         expect(error).to have_key(:error)
+         expect(error).to have_key(:message)
+       end
+
+       it 'will a bad request error if quantity is missing', :vcr do
+         get '/api/v1/book-search', params: { location: 'denver,co' }
+
+         expect(response).to_not be_successful
+         expect(response.status).to eq(400)
+
+         error = JSON.parse(response.body, symbolize_names: true)
+
+         expect(error).to have_key(:error)
+         expect(error).to have_key(:message)
+       end
+
+       it 'will a bad request error if both quantity and location params are missing', :vcr do
+         get '/api/v1/book-search', params: {}
+
+         expect(response).to_not be_successful
+         expect(response.status).to eq(400)
+
+         error = JSON.parse(response.body, symbolize_names: true)
+
+         expect(error).to have_key(:error)
+         expect(error).to have_key(:message)
+       end
      end
    end
  end
