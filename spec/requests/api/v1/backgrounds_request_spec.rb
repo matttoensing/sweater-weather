@@ -10,13 +10,21 @@ RSpec.describe 'backgrounds API' do
       image = JSON.parse(response.body, symbolize_names: true)[:data]
 
       expect(image).to have_key(:id)
+      expect(image[:id].class).to eq(NilClass)
       expect(image).to have_key(:type)
+      expect(image[:type].class).to eq(String)
       expect(image).to have_key(:attributes)
+      expect(image[:attributes].class).to eq(Hash)
       expect(image[:attributes]).to have_key(:image_url)
+      expect(image[:attributes][:image_url].class).to eq(String)
       expect(image[:attributes]).to have_key(:location)
+      expect(image[:attributes][:location].class).to eq(String)
       expect(image[:attributes]).to have_key(:author)
+      expect(image[:attributes][:author].class).to eq(String)
       expect(image[:attributes]).to have_key(:author_url)
+      expect(image[:attributes][:author_url].class).to eq(String)
       expect(image[:attributes]).to have_key(:source)
+      expect(image[:attributes][:source].class).to eq(String)
     end
   end
 
