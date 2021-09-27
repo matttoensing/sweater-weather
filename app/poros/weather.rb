@@ -3,6 +3,6 @@ class Weather
 
   def initialize(data)
     @summary = data[:weather][0][:description]
-    @temperature = data[:temp].round(1)
+    @temperature = "#{data[:temp].round} F"
   end
 end

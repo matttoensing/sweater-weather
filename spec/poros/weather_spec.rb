@@ -31,6 +31,6 @@ require 'rails_helper'
 
    expect(weather).to be_an_instance_of(Weather)
    expect(weather.summary).to eq("scattered clouds")
-   expect(weather.temperature).to eq(77.7)
+   expect(weather.temperature).to eq("78 F")
    end
  end
