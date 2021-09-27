@@ -2,7 +2,7 @@ require 'rails_helper'
 
  RSpec.describe 'book search api' do
    describe 'happy paths' do
-     it 'sends a list of books based on location and quantitity params' do
+     it 'sends a list of books based on location and quantitity params', :vcr do
        get '/api/v1/book-search', params: {location: 'denver,co', quantity: 5}
 
        expect(response).to be_successful
