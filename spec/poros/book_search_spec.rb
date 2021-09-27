@@ -35,7 +35,7 @@ require 'rails_helper'
      expect(book_search.destination).to eq(location)
      expect(book_search.total_books_found).to eq(book_data[:numFound])
      expect(book_search.forecast).to be_an_instance_of(Weather)
-     expect(book_search.forecast.temperature).to eq(77.7)
+     expect(book_search.forecast.temperature).to eq("78 F")
      expect(book_search.forecast.summary).to eq("scattered clouds")
      book_search.books.each do |book|
        expect(book).to be_an_instance_of(Book)
