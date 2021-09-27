@@ -8,6 +8,7 @@ require 'rails_helper'
      expect(json[:numFound].class).to eq(Integer)
      expect(json).to have_key(:docs)
      expect(json[:docs].class).to eq(Array)
+     expect(json[:docs].count).to eq(5)
      json[:docs].each do |book|
        expect(book).to have_key(:title)
        expect(book[:title].class).to eq(String)
