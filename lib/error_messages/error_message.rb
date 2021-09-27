@@ -33,4 +33,11 @@ class ErrorMessage
       "error": "bad request"
     }
   end
+
+  def self.book_search_error
+    {
+      "message": "location and quantity must be present",
+      "error": "bad request"
+    }
+  end
 end
