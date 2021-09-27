@@ -10,7 +10,7 @@ require 'rails_helper'
      latitude = '34.28088'
      longitute = '-114.18384'
 
-     book_search = BookSearchFacade.create_book_search(book_data, query, quantity, latitude, longitute)
+     book_search = BookSearchFacade.create_book_search(query, quantity, latitude, longitute)
 
      expect(book_search).to be_an_instance_of(BookSearch)
      expect(book_search.destination).to eq(query)
