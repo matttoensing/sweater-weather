@@ -47,7 +47,7 @@
 ## About The Project
 
 <div align="center">
-![Screen Shot 2021-09-28 at 2 00 03 PM](https://user-images.githubusercontent.com/80132364/135164860-b13d559f-dd3f-4592-ac50-1dc660ec1a9d.png)
+[Screen Shot 2021-09-28 at 2 00 03 PM](https://user-images.githubusercontent.com/80132364/135164860-b13d559f-dd3f-4592-ac50-1dc660ec1a9d.png)
 </div>
 
 This is an API application built with Ruby on Rails. It is designed to expose weather data for a location, show an image for a given location, handle user registration as well as login, and show road trip information. Road trip information includes travel time between an origin and destination, and weather at estimated time of arrival. Five different <a href="#endpoints">endpoints</a> are included in this application.
