@@ -13,6 +13,7 @@ class Image
 
   def credit_photographer(data)
     {
+      photographer: data[:name],
       author_profile_url: data[:links][:self],
       author_url: data[:portfolio_url],
       source: 'unsplash.com'
