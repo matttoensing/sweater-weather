@@ -8,10 +8,10 @@ RSpec.describe Image do
     image = Image.new(attributes, 'boulder, co')
 
     credit = {
-        photographer: attributes[:user][:name],
-        author_profile_url: attributes[:user][:links][:self],
-        author_url: attributes[:user][:portfolio_url],
-        source: 'unsplash.com'
+      photographer: attributes[:user][:name],
+      author_profile_url: attributes[:user][:links][:self],
+      author_url: attributes[:user][:portfolio_url],
+      source: 'unsplash.com'
     }
 
     expect(image).to be_an_instance_of(Image)

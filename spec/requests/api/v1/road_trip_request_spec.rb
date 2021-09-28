@@ -124,7 +124,8 @@ RSpec.describe Api::V1::RoadtripController, type: :controller do
       expect(error).to have_key(:message)
     end
 
-    it 'can will not send information about a road trip if the there is no route between origin and destination', :vcr do
+    it 'can will not send information about a road trip if the there is no route between origin and destination',
+       :vcr do
       user = create(:user)
 
       request_body = {

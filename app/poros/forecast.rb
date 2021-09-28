@@ -4,7 +4,6 @@ class Forecast
               :daily_weather,
               :hourly_weather
 
-
   def initialize(data)
     @id = nil
     @current_weather = CurrentWeather.new(data)
