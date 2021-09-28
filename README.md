@@ -79,7 +79,8 @@ This is an API application built with Ruby on Rails. It is designed to expose we
 * Ruby 2.7.2
 * Ruby on Rails 5.2.6
 * API keys from Unsplash, Mapquest, and OpenWeather. Instructions on obtaining and using API keys locally with this application can be found below. 
-* 
+* <a href="https://www.postgresql.org/download/">Postgresql</a>
+
 ### Installation
 Clone down this repo
 
@@ -96,6 +97,12 @@ Install any missing gems
 
 ```
 bundle install
+```
+
+Setup your local database with Postgresql. 
+```
+rails db:create
+rails db:migrate
 ```
 
 ### Gem Setup and API Keys
