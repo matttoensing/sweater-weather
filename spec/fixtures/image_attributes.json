@@ -25,7 +25,15 @@
            "last_name": "Levine",
            "twitter_username": null,
            "portfolio_url": "https://emilyiscreative.myportfolio.com/",
-           "bio": "Skilled Designer and Creative Problem Solver living in Colorado.\r\n"
+           "bio": "Skilled Designer and Creative Problem Solver living in Colorado.\r\n",
+           "links": {
+                  "self": "https://api.unsplash.com/users/justinljwang",
+                  "html": "https://unsplash.com/@justinljwang",
+                  "photos": "https://api.unsplash.com/users/justinljwang/photos",
+                  "likes": "https://api.unsplash.com/users/justinljwang/likes",
+                  "portfolio": "https://api.unsplash.com/users/justinljwang/portfolio",
+                  "following": "https://api.unsplash.com/users/justinljwang/following",
+                  "followers": "https://api.unsplash.com/users/justinljwang/followers"
+              }
          }
        }
-  
