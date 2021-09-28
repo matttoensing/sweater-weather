@@ -17,6 +17,7 @@ RSpec.describe Image do
     expect(image).to be_an_instance_of(Image)
     expect(image.id).to eq(nil)
     expect(image.location).to eq('boulder, co')
+    expect(image.description).to eq(attributes[:alt_description])
     expect(image.image_url).to eq(attributes[:urls][:full])
     expect(image.credit).to eq(credit)
   end
