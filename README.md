@@ -148,7 +148,7 @@ HTTP Verb | Endpoint              | Description                              | L
 ----------|-----------------------|------------------------------------------|---------------------------
 GET       | `/api/v1/forecast` | Get the forecast for a location | [Link](#get-forecast)
 GET       | `/api/v1/backgrounds`           | Find a background for a location | [Link](#backgrounds)
-POST      | `/api/v1/users` | Create a new user in the system | [Link](#create-user)
+POST      | `/api/v1/users` | Create a new user in the system | [Link](#create-a-user)
 POST      | `/api/v1/sessions` | Login a User | [Link](#create-a-new-session)
 POST      | `/api/v1/roadtrip` | Request Road Trip information | [Link](#roadtrip)
 
