@@ -110,28 +110,25 @@ This will install a .yml file in the config directory called `appication.yml`. T
 2. Once a weather API key has been obtained, copy paste it into the `config/application.yml` with a local variable called `weather_key` as follows:
 
 ```
-weather_key: < open weather API key goes here>
+weather_key: <open weather API key goes here>
 ```
 
 3. A Mapquest API key can be obtained <a href="https://developer.mapquest.com/documentation/">here</a>
-4. Repeat step #2 with the Mapquest API key, and name the variable `geo_key`
+4. Repeat step #2 with the Mapquest API key, and name the variable `geo_key`. It should look like this:
+
+```
+geo_key: <MapQuest key goes here>
+```
+
 5. An Unsplash API key can be obtained <a href="https://unsplash.com/documentation">here</a>
-6. Repeat step #2 with the Unsplash API key, and name the variable `unsplash_key`
+6. Repeat step #2 with the Unsplash API key, and name the variable `unsplash_key`. It should look like this:
+
+```
+unsplash_key: <Unsplash key goes here>
+```
 
 Great! Now that you have all the API keys, you are ready to run the application. I recommend using <a href="https://www.postman.com/">Postman</a> for all your API needs as a developer, however local host will do as well. 
 
-
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-
-
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
