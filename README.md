@@ -138,7 +138,7 @@ unsplash_key: <Unsplash key goes here>
 
 ## Usage
 
-Great! Now that you have all the API keys, you are ready to run the application. I recommend using <a href="https://www.postman.com/">Postman</a> for all your API needs as a developer, however local host will do as well. From the command line, run `rails s` to start your local server. Now that the server has been fired up, you can checkout all the endpoints in postman. Use the url `http://localhost:3000` in postman to send requests to your server. A detailed list of the endpoints that are available within this application are in the table below. 
+Great! Now that you have all the API keys, you are ready to run the application. I recommend using <a href="https://www.postman.com/">Postman</a> for all your API needs as a developer, however local host will do as well. From the command line, run `rails s` to start your local server. Now that the server has been fired up, you can checkout all the endpoints in postman. Use the url `http://localhost:3000` in postman to send requests to your server. A detailed list of the endpoints that are available within this application are listed below. 
 
 
 <!-- ROADMAP -->
@@ -156,7 +156,7 @@ POST      | `/api/v1/roadtrip` | Request Road Trip information | [Link](#roadtri
 
 ### Get Forecast
 
-Returns a Forecast for a given location. This endpoint must include a location through params. 
+Returns a Forecast for a given location. This endpoint must include a location through params. This response will include daily weather for the next 5 days, as well as hourly weather for the next 8 hours.
 
 ```
 GET /api/v1/forecast?location={location}
