@@ -117,7 +117,7 @@ This will install a .yml file in the config directory called `appication.yml`. T
 2. Once a weather API key has been obtained, copy paste it into the `config/application.yml` with a local variable called `weather_key` as follows:
 
 ```
-weather_key: <OpenWeather API key goes here>
+weather_key: <OpenWeather key goes here>
 ```
 
 3. A Mapquest API key can be obtained <a href="https://developer.mapquest.com/documentation/">here</a>
