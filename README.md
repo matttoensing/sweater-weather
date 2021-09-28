@@ -12,7 +12,7 @@
   <h3 align="center">Sweater Weather</h3>
 
   <p align="center">
-    A Road Trip for your Travel Needs
+    A Road Trip App For Your Travel Needs
 </p>
 
 
