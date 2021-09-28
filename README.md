@@ -413,9 +413,8 @@ Status: 200 OK
 
 ## Contact
 
-Matt Toensing - [@instagram](https://www.instagram.com/matt_rtoensing/) - [Email](mailto:matthew.toensing@gmail.com) - [GitHub](https://github.com/matttoensing) 
+Matt Toensing - [@instagram](https://www.instagram.com/matt_rtoensing/) - [Email](mailto:matthew.toensing@gmail.com) - [GitHub](https://github.com/matttoensing) - [LinkedIn ](https://linkedin.com/in/matt-toensing/)
 
-LinkedIn = [Profile](https://linkedin.com/in/matt-toensing/)
 Project Link: [https://github.com/matttoensing/sweater-weather](https://github.com/matttoensing/sweater-weather)
 
 
