@@ -134,14 +134,9 @@ geo_key: <MapQuest key goes here>
 unsplash_key: <Unsplash key goes here>
 ```
 
-Great! Now that you have all the API keys, you are ready to run the application. I recommend using <a href="https://www.postman.com/">Postman</a> for all your API needs as a developer, however local host will do as well. 
-
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+Great! Now that you have all the API keys, you are ready to run the application. I recommend using <a href="https://www.postman.com/">Postman</a> for all your API needs as a developer, however local host will do as well. From the command line, run `rails s` to start your local server. Now that the server has been fired up, you can checkout all the endpoints in postman. Use the url `http://localhost:3000` in postman to send requests to your server. A detailed list of the endpoints that are available within this application are in the table below. 
 
 
 <!-- ROADMAP -->
