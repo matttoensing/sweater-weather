@@ -32,6 +32,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#gem-setup-and-api-keys">Gem Setup and API Keys</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -73,13 +74,53 @@ This is an API application built with Ruby on Rails. It is designed to expose we
 
 ## Getting Started
 
+### Prerequisites
+
+* Ruby 2.7.2
+* Ruby on Rails 5.2.6
+* API keys from Unsplash, Mapquest, and OpenWeather. Instructions on obtaining and using API keys locally with this application can be found below. 
+* 
+### Installation
 Clone down this repo
 
 ```
-git clone 
+git clone git@github.com:matttoensing/sweater-weather.git
 ```
 
-### Prerequisites
+Move into sweater weather directory
+```
+cd sweater-weather
+```
+
+Install any missing gems
+
+```
+bundle install
+```
+
+### Gem Setup and API Keys
+First, install figaro on your repo. To do this, run:
+```
+bundle exec figaro install
+```
+
+This will install a .yml file in the config directory called `appication.yml`. This file is where API keys are used within the application as ENV variables. API keys stored in this file will not be pushed up if storing your repo on GitHub. 
+
+1. You can obtain a open weather API key <a href="https://openweathermap.org/api">here</a>
+2. Once a weather API key has been obtained, copy paste it into the `config/application.yml` with a local variable called `weather_key` as follows:
+
+```
+weather_key: < open weather API key goes here>
+```
+
+3. A Mapquest API key can be obtained <a href="https://developer.mapquest.com/documentation/">here</a>
+4. Repeat step #2 with the Mapquest API key, and name the variable `geo_key`
+5. An Unsplash API key can be obtained <a href="https://unsplash.com/documentation">here</a>
+6. Repeat step #2 with the Unsplash API key, and name the variable `unsplash_key`
+
+Great! Now that you have all the API keys, you are ready to run the application. I recommend using <a href="https://www.postman.com/">Postman</a> for all your API needs as a developer, however local host will do as well. 
+
+
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
@@ -87,16 +128,6 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
 
 
 
