@@ -51,6 +51,29 @@ RSpec.describe Api::V1::SessionsController, type: :controller do
       expect(json[:attributes][:email].class).to eq(String)
       expect(json[:attributes][:api_key].class).to eq(String)
     end
+
+    it 'will not expose critical data' do
+      user = create(:user)
+
+      user_body = {
+        email: user.email,
+        password: user.password,
+        password_confirmation: user.password
+      }
+
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
+
+      post :create, params: {}, body: user_body.to_json, as: :json
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(json).to_not have_key(:password)
+      expect(json).to_not have_key(:password_confirmation)
+      expect(json).to_not have_key(:password_digest)
+    end
   end
 
   describe 'sad path' do

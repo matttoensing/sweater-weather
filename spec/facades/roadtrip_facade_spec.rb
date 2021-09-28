@@ -43,7 +43,7 @@ RSpec.describe RoadtripFacade do
     allow(RoadtripFacade).to receive(:travel_time).and_return([1, 20, 15])
     weather = RoadtripFacade.destination_weather_conditions('boulder,co', 'denver,co')
 
-    expect(weather).to eq("clear sky")
+    expect(weather).to eq('clear sky')
   end
 
   it 'can determine hourly weather temperature for a road trip', :vcr do
@@ -67,7 +67,7 @@ RSpec.describe RoadtripFacade do
 
     weather = RoadtripFacade.hourly_weather_conditions(data, time)
 
-    expect(weather).to eq("overcast clouds")
+    expect(weather).to eq('overcast clouds')
   end
 
   it 'can determine daily weather temperature for a road trip', :vcr do
@@ -91,7 +91,7 @@ RSpec.describe RoadtripFacade do
 
     weather = RoadtripFacade.daily_weather_conditions(data, time)
 
-    expect(weather).to eq("clear sky")
+    expect(weather).to eq('clear sky')
   end
 
   it 'can create weather information for a road trip destination', :vcr do

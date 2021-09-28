@@ -7,12 +7,18 @@ RSpec.describe Image do
     attributes = JSON.parse(response, symbolize_names: true)
     image = Image.new(attributes, 'boulder, co')
 
+    credit = {
+      photographer: attributes[:user][:name],
+      author_profile_url: attributes[:user][:links][:self],
+      author_url: attributes[:user][:portfolio_url],
+      source: 'unsplash.com'
+    }
+
     expect(image).to be_an_instance_of(Image)
     expect(image.id).to eq(nil)
     expect(image.location).to eq('boulder, co')
+    expect(image.description).to eq(attributes[:alt_description])
     expect(image.image_url).to eq(attributes[:urls][:full])
-    expect(image.author).to eq(attributes[:user][:name])
-    expect(image.author_url).to eq(attributes[:user][:portfolio_url])
-    expect(image.source).to eq('unsplash.com')
+    expect(image.credit).to eq(credit)
   end
 end

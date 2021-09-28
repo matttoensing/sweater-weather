@@ -105,6 +105,51 @@ RSpec.describe 'weather api' do
       expect(weather).to_not have_key(:wind_gust)
       expect(weather).to_not have_key(:dew_point)
     end
+
+    it 'can send an optional param units to return metric values', :vcr do
+      get '/api/v1/forecast', params: { location: 'denver,co', units: 'metric' }
+
+      expect(response).to be_successful
+
+      weather = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(weather).to have_key(:id)
+      expect(weather[:id]).to eq(nil)
+      expect(weather).to have_key(:type)
+      expect(weather[:type]).to eq('forecast')
+      expect(weather).to have_key(:attributes)
+      expect(weather[:attributes]).to have_key(:current_weather)
+      expect(weather[:attributes][:current_weather]).to have_key(:datetime)
+
+      expect(weather[:attributes]).to have_key(:daily_weather)
+      expect(weather[:attributes]).to have_key(:hourly_weather)
+
+      expect(weather[:attributes][:current_weather]).to have_key(:temperature)
+      expect(weather[:attributes][:current_weather]).to have_key(:conditions)
+      expect(weather[:attributes][:current_weather]).to have_key(:humidity)
+      expect(weather[:attributes][:current_weather]).to have_key(:feels_like)
+      expect(weather[:attributes][:current_weather]).to have_key(:uvi)
+      expect(weather[:attributes][:current_weather]).to have_key(:visibility)
+      expect(weather[:attributes][:current_weather]).to have_key(:sunrise)
+      expect(weather[:attributes][:current_weather]).to have_key(:sunset)
+
+      weather[:attributes][:daily_weather].each do |data|
+        expect(data).to have_key(:date)
+        expect(data).to have_key(:sunrise)
+        expect(data).to have_key(:sunset)
+        expect(data).to have_key(:max_temp)
+        expect(data).to have_key(:min_temp)
+        expect(data).to have_key(:conditions)
+        expect(data).to have_key(:icon)
+      end
+
+      weather[:attributes][:hourly_weather].each do |data|
+        expect(data).to have_key(:time)
+        expect(data).to have_key(:temperature)
+        expect(data).to have_key(:conditions)
+        expect(data).to have_key(:icon)
+      end
+    end
   end
 
   describe 'sad paths' do
