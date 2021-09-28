@@ -127,7 +127,7 @@ weather_key: <OpenWeather key goes here>
 geo_key: <MapQuest key goes here>
 ```
 
-5. An Unsplash API key can be obtained <a href="https://unsplash.com/documentation">here</a>
+5. An Unsplash API key can be obtained <a href="https://unsplash.com/documentation">here</a>. Please review the Unsplash guidelines for crediting photos <a href="https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines">here</a>
 6. Repeat step #2 with the Unsplash API key, and name the variable `unsplash_key`. It should look like this:
 
 ```
@@ -415,20 +415,19 @@ Status: 200 OK
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Matt Toensing - [@instagram](https://www.instagram.com/matt_rtoensing/) - [Email](matthew.toensing@gmail.com) = [GitHub](https://github.com/matttoensing)
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/matttoensing/sweater-weather](https://github.com/matttoensing/sweater-weather)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
-
-
+* Turing School of Software and Design
+* Unsplash API
+* Mapquest API
+* OpenWeather API
 
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
