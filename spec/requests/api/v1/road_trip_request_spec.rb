@@ -75,7 +75,7 @@ RSpec.describe Api::V1::RoadtripController, type: :controller do
       post :create, params: {}, body: request_body.to_json, as: :json
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(404)
+      expect(response.status).to eq(401)
 
       error = JSON.parse(response.body, symbolize_names: true)
 

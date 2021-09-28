@@ -1,7 +1,9 @@
 class Api::V1::RoadtripController < ApplicationController
   def create
-    user = User.find_by!(api_key: params[:api_key])
-    if api_key_present? && origin_and_destination_params_present?
+    user = User.find_by(api_key: params[:api_key])
+    if user.nil? || api_key_not_present?
+      json_response(ErrorMessage.api_key_invalid, :unauthorized)
+    elsif origin_and_destination_params_present?
       roadtrip = RoadtripFacade.create_roadtrip(params[:origin], params[:destination])
       return json_response(ErrorMessage.roadtrip_route_not_available, :bad_request) if roadtrip.nil?
 
@@ -13,8 +15,8 @@ class Api::V1::RoadtripController < ApplicationController
 
   private
 
-  def api_key_present?
-    params[:api_key].present?
+  def api_key_not_present?
+    !params[:api_key].present?
   end
 
   def origin_and_destination_params_present?
