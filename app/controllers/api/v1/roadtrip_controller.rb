@@ -1,6 +1,4 @@
 class Api::V1::RoadtripController < ApplicationController
-  # before_action :authenticate, only: :create
-
   def create
     user = User.find_by(api_key: params[:api_key])
     if user.nil? || api_key_not_present?
