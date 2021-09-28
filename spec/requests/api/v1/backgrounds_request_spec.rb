@@ -52,8 +52,9 @@ RSpec.describe 'backgrounds API' do
 
     expect(image).to_not have_key(:created_at)
     expect(image).to_not have_key(:updated_at)
-    expect(image).to_not have_key(:created_at)
-    expect(image).to_not have_key(:updated_at)
+    expect(image).to_not have_key(:description)
+    expect(image).to_not have_key(:links)
+    expect(image).to_not have_key(:likes)
   end
 end
 
@@ -72,7 +73,7 @@ describe 'sad path' do
 
   it 'will throw an error if no location is found', :vcr do
     get '/api/v1/backgrounds', params: { location: 'lakjfbiw09yqwekjfbqwef90h' }
-    
+
     expect(response).to_not be_successful
     expect(response.status).to eq(400)
 
