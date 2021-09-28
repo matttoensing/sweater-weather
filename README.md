@@ -52,7 +52,7 @@
   <img width="500" height="500" src="https://user-images.githubusercontent.com/80132364/135164860-b13d559f-dd3f-4592-ac50-1dc660ec1a9d.png">
 </p>
 
-This is an API application built with Ruby on Rails. It is designed to expose weather data for a location, show an image for a given location, handle user registration as well as login, and show road trip information. Road trip information includes travel time between an origin and destination, and weather at estimated time of arrival. Five different <a href="#endpoints">endpoints</a> are included in this application.
+This is an API application built with Ruby on Rails. It is designed to expose weather data for a location, show an image for a given location, handle user registration as well as login, and show road trip information. Road trip information includes travel time between an origin and destination, and weather at estimated time of arrival. The endpoints for this application can be found <a href="#endpoints">here</a>.
 
 
 ### Built With
