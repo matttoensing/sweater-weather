@@ -12,6 +12,7 @@ RSpec.describe Image do
     expect(image.location).to eq('boulder, co')
     expect(image.image_url).to eq(attributes[:urls][:full])
     expect(image.author).to eq(attributes[:user][:name])
+    expect(image.author_profile_url).to eq(attributes[:user][:links][:self])
     expect(image.author_url).to eq(attributes[:user][:portfolio_url])
     expect(image.source).to eq('unsplash.com')
   end
