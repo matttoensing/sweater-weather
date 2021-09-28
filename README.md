@@ -101,7 +101,7 @@ Install any missing gems
 bundle install
 ```
 
-Setup your local database with Postgresql. 
+Setup your local database with Postgresql
 ```
 rails db:create
 rails db:migrate
