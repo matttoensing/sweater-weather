@@ -22,15 +22,48 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       json = JSON.parse(response.body, symbolize_names: true)[:data]
 
       expect(json).to have_key(:type)
-      expect(json[:type].class).to eq(String)
       expect(json).to have_key(:id)
-      expect(json[:id].class).to eq(String)
       expect(json).to have_key(:attributes)
-      expect(json[:attributes].class).to eq(Hash)
       expect(json[:attributes]).to have_key(:email)
-      expect(json[:attributes][:email].class).to eq(String)
       expect(json[:attributes]).to have_key(:api_key)
+    end
+
+    it 'exposes data of specific data types' do
+      user_body = {
+        email: 'whatever@example.com',
+        password: 'password',
+        password_confirmation: 'password'
+      }
+
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
+
+      post :create, params: {}, body: user_body.to_json, as: :json
+
+      json = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(json[:type].class).to eq(String)
+      expect(json[:id].class).to eq(String)
+      expect(json[:attributes].class).to eq(Hash)
+      expect(json[:attributes][:email].class).to eq(String)
       expect(json[:attributes][:api_key].class).to eq(String)
+    end
+
+    it 'will not expose critical data' do
+      user_body = {
+        email: 'whatever@example.com',
+        password: 'password',
+        password_confirmation: 'password'
+      }
+
+      headers = { 'CONTENT_TYPE' => 'application/json', "Accept": 'application/json' }
+
+      post :create, params: {}, body: user_body.to_json, as: :json
+
+      json = JSON.parse(response.body, symbolize_names: true)[:data]
+
+      expect(json).to_not have_key(:password)
+      expect(json).to_not have_key(:password_confirmation)
+      expect(json).to_not have_key(:password_digest)
     end
   end
 
