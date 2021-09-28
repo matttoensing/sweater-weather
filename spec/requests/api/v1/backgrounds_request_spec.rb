@@ -14,6 +14,7 @@ RSpec.describe 'backgrounds API' do
       expect(image).to have_key(:attributes)
       expect(image[:attributes]).to have_key(:image_url)
       expect(image[:attributes]).to have_key(:location)
+      expect(image[:attributes]).to have_key(:description)
       expect(image[:attributes]).to have_key(:credit)
       expect(image[:attributes][:credit]).to have_key(:photographer)
       expect(image[:attributes][:credit]).to have_key(:author_profile_url)
@@ -33,6 +34,7 @@ RSpec.describe 'backgrounds API' do
       expect(image[:attributes].class).to eq(Hash)
       expect(image[:attributes][:image_url].class).to eq(String)
       expect(image[:attributes][:location].class).to eq(String)
+      expect(image[:attributes][:description].class).to eq(String)
       expect(image[:attributes][:credit].class).to eq(Hash)
       expect(image[:attributes][:credit][:photographer].class).to eq(String)
       expect(image[:attributes][:credit][:author_profile_url].class).to eq(String)
@@ -41,29 +43,42 @@ RSpec.describe 'backgrounds API' do
     end
   end
 
-  describe 'sad path' do
-    it 'will throw an error if no location is present' do
-      get '/api/v1/backgrounds'
+  it 'does not send all data back to client', :vcr do
+    get '/api/v1/backgrounds', params: { location: 'denver,co' }
 
-      expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+    expect(response).to be_successful
 
-      error = JSON.parse(response.body, symbolize_names: true)
+    image = JSON.parse(response.body, symbolize_names: true)[:data]
 
-      expect(error).to have_key(:error)
-      expect(error).to have_key(:message)
-    end
+    expect(image).to_not have_key(:created_at)
+    expect(image).to_not have_key(:updated_at)
+    expect(image).to_not have_key(:created_at)
+    expect(image).to_not have_key(:updated_at)
+  end
+end
 
-    it 'will throw an error if no location is found', :vcr do
-      get '/api/v1/backgrounds', params: { location: 'lakjfbiw09yqwekjfbqwef90h' }
+describe 'sad path' do
+  it 'will throw an error if no location is present' do
+    get '/api/v1/backgrounds'
 
-      expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
 
-      error = JSON.parse(response.body, symbolize_names: true)
+    error = JSON.parse(response.body, symbolize_names: true)
 
-      expect(error).to have_key(:error)
-      expect(error).to have_key(:message)
-    end
+    expect(error).to have_key(:error)
+    expect(error).to have_key(:message)
+  end
+
+  it 'will throw an error if no location is found', :vcr do
+    get '/api/v1/backgrounds', params: { location: 'lakjfbiw09yqwekjfbqwef90h' }
+    
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+
+    error = JSON.parse(response.body, symbolize_names: true)
+
+    expect(error).to have_key(:error)
+    expect(error).to have_key(:message)
   end
 end
