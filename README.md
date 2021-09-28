@@ -142,10 +142,277 @@ Great! Now that you have all the API keys, you are ready to run the application.
 <!-- ROADMAP -->
 ## Endpoints
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+# Search Endpoints
+
+HTTP Verb | Endpoint              | Description                              | Link
+----------|-----------------------|------------------------------------------|---------------------------
+GET       | `/api/v1/forecast` | Get the forecast for a location | [Link](#get-forecast)
+GET       | `/api/v1/backgrounds`           | Find a background for a location | [Link](#backgrounds)
+POST      | `/api/v1/users` | Create a new user in the system | [Link](#create-user)
+POST      | `/api/v1/sessions` | Login a User | [Link](#create-a-new-session)
+POST      | `/api/v1/roadtrip` | Request Road Trip information | [Link](#roadtrip)
+
+---
+
+### Get Forecast
+
+Returns a Forecast for a given location. This endpoint must include a location through params. 
+
+```
+GET /api/v1/forecast?location={location}
+```
+
+OR 
+
+```
+GET /api/v1/forecast?location={location}?units=metric
+```
+
+### Parameters
+
+Name        | Data Type | In    | Required/Optional    | Description
+------------|---------|-------|----------------------|------------
+`location`  | String | Path | Required | Location of a City or Destination
+`units`     | String | Path | Optional | See notes below
+
+Notes: 
+Units is an optional parameter. The default response will be in imperial units. To return metric values, include metric with the key units in params
+
+### Example Response
+
+```
+Status: 200 OK
+```
+
+```
+{
+    "data": {
+        "id": null,
+        "type": "forecast",
+        "attributes": {
+            "current_weather": {
+                "datetime": "2021-09-28 13:31:36 -0700",
+                "conditions": "clear sky",
+                "temperature": 89.9,
+                "humidity": 36,
+                "feels_like": 89.3,
+                "uvi": 5.43,
+                "visibility": 10000,
+                "sunrise": "2021-09-28 06:29:56 -0700",
+                "sunset": "2021-09-28 18:25:47 -0700"
+            },
+            "daily_weather": [
+                {
+                    "date": "2021-09-29",
+                    "sunrise": "2021-09-29 06:30:40 -0700",
+                    "sunset": "2021-09-29 18:24:22 -0700",
+                    "max_temp": 86.7,
+                    "min_temp": 72.3,
+                    "conditions": "overcast clouds",
+                    "icon": "http://openweathermap.org/img/w/04d.png"
+                },
+                { ... }
+            ],
+            "hourly_weather": [
+                {
+                    "time": "14:00:00",
+                    "temperature": 89.9,
+                    "conditions": "clear sky",
+                    "icon": "http://openweathermap.org/img/w/01d.png"
+                },
+                { ... }
+            ]
+        }
+    }
+}
+```
+
+---
+
+### Backgrounds
+
+Returns a Background image from Unsplash for a given location. This endpoint must include a location through params. 
+
+```
+GET /api/v1/backgrounds?location={location}
+```
+
+### Parameters
+
+Name        | Data Type | In    | Required/Optional    | Description
+------------|---------|-------|----------------------|------------
+`location`  | String | Path | Required | Location of a City or Destination
 
 
-<!-- CONTACT -->
+### Example Response
+
+```
+Status: 200 OK
+```
+
+```
+{
+    "data": {
+        "id": null,
+        "type": "image",
+        "attributes": {
+            "location": "boulder, co",
+            "image_url": "https://images.unsplash.com/photo-example",
+            "description": "exmaple photo description",
+            "credit": {
+                "photographer": "Example User",
+                "author_profile_url": "https://api.unsplash.com/users/example",
+                "author_url": "http://example.com",
+                "source": "unsplash.com"
+            }
+        }
+    }
+}
+```
+---
+
+### Create a User
+
+This will endpoint create a new user in the database. The information must be sent through the body of the request to be successful. Upon creation of a new user, an API key will be generated for the user to be used for the [Road Trip](#roadtrip) endpoint.
+
+```
+POST /api/v1/users
+```
+
+Example of request body:
+```
+{
+  "email": "example@example.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
+```
+
+### Body
+
+Name        | Data Type | In    | Required/Optional    | Description
+------------|---------|-------|----------------------|------------
+`email`  | String | Body | Required | Users Email
+`password`  | String | Body | Required | Users Password
+`password_confirmation`  | String | Body | Required | Users Password for Authentication
+
+
+### Example Response
+
+```
+Status: 200 OK
+```
+
+```
+{
+    "data": {
+        "id": "1",
+        "type": "user",
+        "attributes": {
+            "email": "example@example.com",
+            "api_key": "gUayV8OvgSUGAQc8n4FnvQ"
+        }
+    }
+}
+```
+---
+
+### Create a New Session
+
+This will endpoint login a user if the password is authenticated. The user must already exist in the database to successfully login. 
+
+```
+POST /api/v1/sessions
+```
+
+Example of request body:
+```
+{
+  "email": "example@example.com",
+  "password": "password",
+}
+```
+
+### Body
+
+Name        | Data Type | In    | Required/Optional    | Description
+------------|---------|-------|----------------------|------------
+`email`  | String | Body | Required | Users Email
+`password`  | String | Body | Required | Users Password
+
+
+### Example Response
+
+```
+Status: 200 OK
+```
+
+```
+{
+    "data": {
+        "id": "1",
+        "type": "user",
+        "attributes": {
+            "email": "example@example.com",
+            "api_key": "gUayV8OvgSUGAQc8n4FnvQ"
+        }
+    }
+}
+```
+---
+
+### Roadtrip
+
+This endpoint will generate travel time between an origin location and a destination in the response body. It will also determine the weather at the estimated time of arrival for the destination.  
+
+```
+POST /api/v1/roadtrip
+```
+
+Example of request body:
+```
+{
+  "origin": "Denver,CO",
+  "destination": "Pueblo,CO",
+  "api_key": "gUayV8OvgSUGAQc8n4FnvQ"
+}
+```
+
+### Body
+
+Name        | Data Type | In    | Required/Optional    | Description
+------------|---------|-------|----------------------|------------
+`origin`  | String | Body | Required | An origin location
+`destination`  | String | Body | Required | A destination location
+`api_key`  | String | Body | Required | An API key for a specific user registered with the application
+
+
+### Example Response
+
+```
+Status: 200 OK
+```
+
+```
+{
+    "data": {
+        "id": null,
+        "type": "roadtrip",
+        "attributes": {
+            "start_city": "Denver, CO",
+            "end_city": "Pueblo, CO",
+            "travel_time": "1 Hours, 44 Minutes",
+            "weather_at_eta": {
+                "temperature": 79.1,
+                "conditions": "few clouds"
+            }
+        }
+    }
+}
+```
+---
+
+
 ## Contact
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
