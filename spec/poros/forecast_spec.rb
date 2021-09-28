@@ -21,5 +21,6 @@ RSpec.describe Forecast do
     expect(weather.hourly_weather.count).to eq(8)
     weather.hourly_weather.each do |hourly|
       expect(hourly).to be_an_instance_of(HourlyWeather)
+    end
   end
 end
