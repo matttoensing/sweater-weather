@@ -33,4 +33,11 @@ class ErrorMessage
       "error": "bad request"
     }
   end
+
+  def self.api_key_invalid
+    {
+      "message": "api key is invalid",
+      "error": "bad request"
+    }
+  end
 end
