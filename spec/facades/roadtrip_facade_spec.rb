@@ -37,7 +37,7 @@ RSpec.describe RoadtripFacade do
     weather = RoadtripFacade.destination_weather('boulder,co', 'denver,co')
 
     expect(weather).to be_an_instance_of(DestinationWeather)
-    expect(weather.temperature).to eq(77.1)
+    expect(weather.temperature).to eq(78.1)
     expect(weather.conditions).to eq('clear sky')
   end
 
@@ -47,7 +47,7 @@ RSpec.describe RoadtripFacade do
       end_city: 'Denver, CO',
       travel_time: '0 Hours, 34 Minutes',
       weather_at_eta: {
-        temperature: 77.1,
+        temperature: 78.1,
         conditions: 'clear sky'
       }
     }

@@ -9,6 +9,18 @@ RSpec.describe DestinationWeather do
     destination_weather = DestinationWeather.new(attributes, [0, 34, 1])
 
     expect(destination_weather).to be_an_instance_of(DestinationWeather)
+    expect(destination_weather.temperature).to eq(attributes[:hourly][1][:temp].round(1))
+    expect(destination_weather.conditions).to eq(attributes[:hourly][1][:weather][0][:description])
+  end
+
+  it 'will have different weather based on minutes coming in' do
+    response = File.read('spec/fixtures/destination_weather.json')
+
+    attributes = JSON.parse(response, symbolize_names: true)
+
+    destination_weather = DestinationWeather.new(attributes, [0, 24, 1])
+
+    expect(destination_weather).to be_an_instance_of(DestinationWeather)
     expect(destination_weather.temperature).to eq(attributes[:hourly][0][:temp].round(1))
     expect(destination_weather.conditions).to eq(attributes[:hourly][0][:weather][0][:description])
   end
