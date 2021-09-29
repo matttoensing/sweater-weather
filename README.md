@@ -300,7 +300,7 @@ Name        | Data Type | In    | Required/Optional    | Description
 ### Example Response
 
 ```
-Status: 200 OK
+Status: 201 CREATED
 ```
 
 ```
