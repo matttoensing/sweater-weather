@@ -294,7 +294,7 @@ Name        | Data Type | In    | Required/Optional    | Description
 ------------|---------|-------|----------------------|------------
 `email`  | String | Body | Required | Users Email
 `password`  | String | Body | Required | Users Password
-`password_confirmation`  | String | Body | Required | Users Password for Authentication
+`password_confirmation`  | String | Body | Required | Users Password for Confirmation
 
 
 ### Example Response
