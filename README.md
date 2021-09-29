@@ -115,7 +115,7 @@ bundle exec figaro install
 
 This will install a .yml file in the config directory called `appication.yml`. This file is where API keys are used within the application as ENV variables. API keys stored in this file will not be pushed up if storing your repo on GitHub. 
 
-1. You can obtain a open weather API key <a href="https://openweathermap.org/api">here</a>
+1. You can obtain an OpenWeather API key <a href="https://openweathermap.org/api">here</a>
 2. Once a weather API key has been obtained, copy paste it into the `config/application.yml` with a local variable called `weather_key` as follows:
 
 ```
