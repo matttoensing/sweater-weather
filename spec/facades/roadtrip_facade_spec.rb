@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe RoadtripFacade do
+  it 'can get direction information from the service', :vcr do
+    expect(RoadtripFacade.get_directions('boulder, co', 'denver, co')).to have_key(:route)
+  end
+
+  it 'can get weather information from the service', :vcr do
+    expect(RoadtripFacade.get_weather('40.0150', '-105.2705')).to eq(WeatherService.get_weather_info('40.0150', '-105.2705'))
+  end
+
   it 'can format the starting location for a roadtrip', :vcr do
     expected = 'Boulder, CO'
 

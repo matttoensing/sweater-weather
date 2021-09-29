@@ -1,16 +1,24 @@
 class RoadtripFacade
+  def self.get_directions(from, to)
+    GeocodeService.get_directions_info(from, to)
+  end
+
+  def self.get_weather(lat, lon)
+    WeatherService.get_weather_info(lat, lon)
+  end
+
   def self.starting_location(from, to)
-    directions = GeocodeService.get_directions_info(from, to)
+    directions = get_directions(from, to)
     directions[:route][:locations][0][:adminArea5] + ', ' + directions[:route][:locations][0][:adminArea3]
   end
 
   def self.ending_location(from, to)
-    directions = GeocodeService.get_directions_info(from, to)
+    directions = get_directions(from, to)
     directions[:route][:locations][1][:adminArea5] + ', ' + directions[:route][:locations][1][:adminArea3]
   end
 
   def self.travel_time(from, to)
-    directions = GeocodeService.get_directions_info(from, to)
+    directions = get_directions(from, to)
     time = directions[:route][:formattedTime]
     time.split(':').map(&:to_i)
   end
@@ -73,7 +81,7 @@ class RoadtripFacade
   end
 
   def self.create_roadtrip(from, to)
-    json = GeocodeService.get_directions_info(from, to)
+    json = get_directions(from, to)
     json[:route][:routeError][:errorCode] == 2 ? nil : Roadtrip.new(create_destination_info(from, to))
   end
 end
